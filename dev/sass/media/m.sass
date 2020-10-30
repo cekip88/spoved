@@ -1,8 +1,7 @@
 $unit: 'px'
-.section
-	+w($mobile#{$unit})
-	margin: auto
 
+aside
+	display: none
 
 .gr-row
 	display: flex
@@ -57,7 +56,7 @@ $unit: 'px'
 			+wh(4px)
 			border-radius: 100%
 			background-color: $text
-	&>.gr-row:first-child
+	&-first
 		position: relative
 		padding-bottom: 8px
 		margin-bottom: 8px
@@ -67,9 +66,12 @@ $unit: 'px'
 			background-color: rgba($underline,.2)
 			position: absolute
 			bottom: 0
-	&>.gr-row:nth-child(2)
-		flex-direction: column
-		align-items: flex-start
+	&-url
+		&-cont
+			height: 0
+			overflow: hidden
+			flex-direction: column
+			transition: .5s ease
 	&-url
 		+w(100%)
 		.gr-row
@@ -86,41 +88,55 @@ $unit: 'px'
 			font-family: $g_reg
 			font-size: 12px
 			color: #fff
+#project
+	display: none
+	&:checked~.project-url-cont
+		height: 230px
 
 
 .framework
-	padding: 20px 0 10px 10px
+	padding: 20px 0 62px 10px
 	border-top-left-radius: 12px
 	background-color: $bgc-light
-	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25)
+	box-shadow: 0 4px 10px 5px rgba(0, 0, 0, 0.25)
 	position: relative
 	&-section
 		padding-top: 10px
 		margin-top: -10px
 		overflow: hidden
 	&-title
+		+wh(100%,161px)
+		border-bottom-left-radius: 12px
+		padding: 15px 0 0 27px
 		font-family: $g_medium
 		font-size: 24px
 		text-transform: uppercase
-		position: absolute
-		top: 30px
-		left: 25px
+		background-color: #FCFCFC
 	&-service
-		overflow: auto
-		padding: 50px 13px 12px
-		background-color: #fff
+		+w(calc(100% - 23px))
+		padding-top: 2px
+		padding-bottom: 70px
 		border-bottom-left-radius: 12px
+		overflow: auto
+		position: absolute
+		top: 77px
+		left: 23px
 		&:after
 			+af
-			height: 10px
+			height: 1px
 			flex: 0 0 1px
-		&-card
+		&-cont
 			flex: 0 0 100px
-			padding: 10px
 			margin-right: 10px
+			box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2)
 			border-radius: 12px
 			background-color: $service-card
-			box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2)
+		&-card
+			width: 100%
+			padding: 10px
+			text-align: left
+			border-radius: 12px
+			background-color: $service-card
 			.gr-row
 				justify-content: space-between
 		&-title
@@ -139,3 +155,67 @@ $unit: 'px'
 				+wh(3px)
 				background-color: $text
 				border-radius: 100%
+	&-controll
+		position: absolute
+		bottom: 22px
+		left: 23px
+		&-button
+			display: flex
+			align-items: center
+			padding: 5px 10px
+			margin-right: 10px
+			border-radius: 6px
+			background-color: #fff
+			box-shadow: 0 0 4px 0 rgba(#000,.32)
+			&:last-child
+				margin-right: 0
+			svg
+				margin-right: 8px
+	&-c
+		background-color: #FEEEEE
+		svg
+			path
+				fill: $red
+
+
+.team
+	margin-top: 20px
+	padding-left: 13px
+	padding-top: 12px
+	background-color: $bgc-dark
+	border-radius: 12px 0 0 12px
+	&-title
+		font-family: $f_bold
+		font-size: 18px
+		padding-left: 10px
+	&-units
+		padding: 6px 0 20px 10px
+		overflow: auto
+		&:after
+			+af
+			height: 1px
+			flex: 0 0 1px
+	&-unit
+		padding: 13px 16px
+		border: 1px solid rgba(#000,.16)
+		border-radius: 12px
+		box-shadow: 0 4px 10px 0 rgba(#000,.25)
+		margin-right: 10px
+		text-align: left
+		font-family: $g_medium
+		span
+			display: block
+			white-space: pre
+			&:first-child
+				font-size: 18px
+			&:last-child
+				font-family: $g_reg
+
+.back
+	padding: 15px 0
+	&-button
+		margin-left: 23px
+		padding: 4px 22px
+		border-radius: 6px
+		background-color: #fff
+		box-shadow: 0 0 4px 0 rgba(#000,.32)

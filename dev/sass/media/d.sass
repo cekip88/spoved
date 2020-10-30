@@ -1,3 +1,178 @@
 $unit: 'px'
-.section
-	+w($desktop#{$unit})
+body
+	font-size: 14px
+	display: flex
+	align-items: flex-start
+main
+	width: calc(100% - 204px)
+	padding-right: 24px
+	padding-left: 36px
+aside
+	display: block
+	flex: 0 0 204px
+
+
+.logout
+	transition: .35s ease
+	&:hover
+		transform: scale(1.15)
+
+.search
+	padding-top: 26px
+	padding-bottom: 34px
+	&-form:after
+		margin-top: 4px
+	&-button
+		+wh(22px)
+		+dfc
+		flex: 0 0 22px
+		transition: .35s ease
+		&:hover
+			transform: scale(1.15)
+	&-input
+		padding-left: 11px
+
+
+.project
+	padding: 40px 40px 29px
+	&-title
+		padding: 8px 14px
+		font-size: 24px
+	&-btn
+		padding: 15px 5px
+		&:after,&:before,span
+			transition: .35s ease
+		&:hover
+			cursor: pointer
+			&:after,&:before,span
+				background-color: $orange
+	&-first
+		padding-bottom: 18px
+		margin-bottom: 14px
+	&-url
+		width: calc(50% - 25px)
+		flex-grow: 0
+		flex-shrink: 0
+		flex-basis: calc(50% - 25px)
+		&:first-child
+			margin-right: 50px
+		.gr-row
+			padding: 5px 4px 5px 13px
+			margin-bottom: 14px
+			&:last-child
+				margin-bottom: 0
+			span
+				padding: 5px 0
+			button
+				padding: 4px 32px
+				font-size: 14px
+				box-shadow: 0 0 4px rgba(0,0,0,.32)
+				transition: .35s ease
+				&:hover
+					transform: scale(1.05)
+		&-cont
+			flex-direction: row
+
+#project:checked~.project-url-cont
+	height: 86px
+	
+	
+.framework
+	padding: 30px 0 72px 27px
+	&-title
+		height: 196px
+		padding: 12px 27px
+		font-size: 48px
+	&-service
+		width: calc(100% - 40px)
+		padding-bottom: 60px
+		top: 110px
+		left: 40px
+		&-cont
+			flex: 0 0 148px
+			margin-right: 30px
+			transition: .35s ease
+			position: relative
+			&:after
+				+af
+				+wh(65px,88px)
+				border-radius: 12px
+				position: absolute
+				bottom: 0
+				right: 0
+				background-color: rgba(#C4C4C4,.6)
+				transition: .35s ease
+			&:hover
+				transform: scale(1.01)
+				box-shadow: 10px 0 4px rgba(0, 0, 0, 0.1)
+				&:after
+					right: -7px
+		&-card
+			position: relative
+			z-index: 100
+			padding: 14px 16px
+		&-title
+			font-size: 18px
+		&-time
+			font-size: 12px
+	&-controll
+		bottom: 35px
+		left: 40px
+		&-button
+			padding: 4px 25px
+			margin-right: 20px
+			font-family: $g_medium
+			transition: .35s ease
+			&:hover
+				transform: scale(1.05)
+
+
+.team
+	margin-top: 36px
+	padding-left: 30px
+	padding-bottom: 10px
+	&-title
+		font-size: 24px
+	&-units
+		padding-top: 9px
+	&-unit
+		flex: 0 0 252px
+		padding: 27px 32px
+		margin-right: 20px
+		box-shadow: 0 4px 16px rgba(0,0,0,.25)
+		transition: .35s ease
+		span:first-child
+			font-size: 20px
+		span:last-child
+			font-size: 12px
+		&:hover
+			transform: scale(1.01)
+			box-shadow: 0 4px 16px 2px rgba(#000,.25)
+
+
+.back
+	padding: 25px 0
+	&-button
+		margin-left: 40px
+		font-family: $g_medium
+		transition: .35s ease
+		&:hover
+			transform: scale(1.05)
+		svg
+			margin-right: 8px
+
+
+body
+	scrollbar-color: #D5D5D5 #ECECEC
+	scrollbar-width: 3px
+	::-webkit-scrollbar
+		+wh(6px)
+		background-color: #ECECEC
+		border-radius: 3px
+	::-webkit-scrollbar-thumb
+		background-color: #D5D5D5
+		border-radius: 3px
+
+.project
+	::-webkit-scrollbar
+		+wh(3px)
