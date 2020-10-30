@@ -1,0 +1,37 @@
+@import "../../../../core/mixins/reset"
+@import "../../../../core/mixins/mixins"
+@import "vars"
+$font_body: 14px
++font_inc($f_bold,'FuturaPT-Bold.ttf')
++font_inc($f_book,'FuturaPT-Book.ttf')
++font_inc($f_demi,'FuturaPT-Demi.ttf')
++font_inc($g_reg,'Geometria.ttf')
++font_inc($g_medium,'Geometria-Medium.ttf')
+.set
+	+wh(100%)
+html,body
+	min-height: 100vh
+	overflow-x: hidden
+body
+	+wh(100%)
+	+font($font_body,$g_reg,$text)
+
+input,button
+	font-family: inherit
+	font-size: inherit
+
+input
+	background-color: transparent
+	border: none
+
+$unit: 'px'
+
+@import "media/m"
++mq($tablet#{$unit})
+	@import "media/t"
++mq($tablet-large#{$unit})
+	@import "media/tl"
++mq($desktop#{$unit})
+	@import "media/d"
+//+mq($desktop-large#{$unit})
+	@import "media/dl"

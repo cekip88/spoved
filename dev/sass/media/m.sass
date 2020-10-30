@@ -1,0 +1,57 @@
+$unit: 'px'
+.section
+	+w($mobile#{$unit})
+	margin: auto
+
+
+.gr-row
+	display: flex
+	align-items: center
+
+
+.search
+	display: flex
+	align-items: center
+	padding-top: 10px
+	padding-bottom: 20px
+	&-form
+		+w(100%)
+		padding-top: 8px
+		margin-right: 40px
+		&:after
+			+af
+			+wh(100%,1px)
+			background-color: $bgc-dark
+			margin-top: 7px
+	&-input
+		+w(100%)
+		padding-left: 14px
+		font-size: 12px
+
+
+.project
+	font-family: $f_book
+	padding: 20px 10px
+	border-top-right-radius: 5px
+	border-top-left-radius: 5px
+	background-color: $bgc-dark
+	&-title,&-url .gr-row
+		padding: 5px
+		background-color: #fff
+	&-title
+		span
+			&:last-child
+				margin-left: 5px
+				font-family: $f_bold
+	&-btn
+		+w(20px)
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 5px 0
+		margin-left: auto
+		&:before,&:after,span
+			+af
+			+wh(4px)
+			border-radius: 100%
+			background-color: $text

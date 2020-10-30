@@ -1,0 +1,116 @@
+extends template/main
+append vars
+	-
+		page_title= 'Главная'
+block content
+	main
+		.section.search
+			form.search-form
+				.gr-row
+					button.search-button
+						include ../img/search.svg
+					input(placeholder='Search').search-input
+			button.logout
+				include ../img/logout.svg
+		.section.project
+			.gr-row
+				.project-title
+					span Project:
+					span tempfordesign
+				button.project-btn
+					span
+			.gr-row
+				.project-url
+					.gr-row
+						span Project URL: https://dmo.apps.mydevcube.com/tempfordesign/site/
+						button Copy
+					.gr-row
+						span $ git clone http://gogs.apps.mydevcube.com/dmo/tempfordesign.git
+						button Copy
+				.project-url
+					.gr-row
+						span Project URL: https://dmo.apps.mydevcube.com/tempfordesign/site/wwww
+						button Copy
+					.gr-row
+						span $ git clone http://gogs.apps.mydevcube.com/dmo/tempfordesign.git
+						button Copy
+		.section
+			.gr-row
+				h1.framework-title framework
+			.gr-row
+				.framework-service-button
+					include ../img/framwork.svg
+					h4.framework-service-title MySQL
+					span.framework-service-time 16 hours
+					button.framework-service-button
+						span
+				.framework-service-button
+					include ../img/framwork.svg
+					h4.framework-service-title C++
+					span.framework-service-time no data
+					button.framework-service-button
+						span
+				.framework-service-button
+					include ../img/framwork.svg
+					h4.framework-service-title phpMyAdmin
+					span.framework-service-time 16 hours
+					button.framework-service-button
+						span
+				.framework-service-button
+					include ../img/framwork.svg
+					h4.framework-service-title Perl
+					span.framework-service-time 16 hours
+					button.framework-service-button
+						span
+				.framework-service-button
+					include ../img/framwork.svg
+					h4.framework-service-title python
+					span.framework-service-time 16 hours
+					button.framework-service-button
+						span
+				.framework-service-button
+					include ../img/framwork.svg
+					h4.framework-service-title WWW
+					span.framework-service-time 16 hours
+					button.framework-service-button
+						span
+				.framework-service-button
+					include ../img/framwork.svg
+					h4.framework-service-title WWW
+					span.framework-service-time 16 hours
+					button.framework-service-button
+						span
+			.gr-row
+				button.framework-controll-button
+					include ../img/stop.svg
+					span Stop
+				button.framework-controll-button
+					include ../img/play.svg
+					span Start
+				button.framework-controll-button
+					include ../img/repeat.svg
+					span Restart
+		.section
+			.gr-row
+				h3.team-title Team
+			.gr-row
+				button.team-unit
+					span Sheldon Cooper
+					span Development
+				button.team-unit
+					span Asdrubael Vect
+					span Development
+				button.team-unit
+					span Louie Anderson
+					span Assistant
+				button.team-unit
+					span Bobby Axelrod
+					span Awesome dude
+				button.team-unit
+					span Asdrubael Vect
+					span Development
+		.section
+			.gr-row
+				button.back-button
+					include ../img/back-icon.svg
+					span Back
