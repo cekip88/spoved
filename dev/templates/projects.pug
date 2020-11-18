@@ -1,0 +1,139 @@
+extends template/main
+append vars
+	-
+		page_title= 'Projects'
+block aside
+	aside
+		+img('menu.png')
+block content
+	main
+		.section.search
+			form.search-form
+				.gr-row
+					button.search-button
+						include ../img/search.svg
+					input(placeholder='Search').search-input
+			button.logout
+				include ../img/logout.svg
+		.section.projects.block
+			.gr-row.projects-first
+				h3.projects-title.block-title Projects
+				.projects-controll.controll.gr-row
+					button.controll-button
+						include ../img/PlusCircle.svg
+						span Create Project
+					button.controll-button
+						include ../img/play.svg
+						span All Start
+			ul.projects-list
+				-for (let i = 0; i < 5; i++)
+					li.projects-item
+						.projects-row
+							.projects-item-title
+								span Project name
+								a(href='#') Tempfordesign
+							.projects-item-info.gr-row
+								include ../img/Users.svg
+								div
+									span Team
+									span Default_team
+							.projects-item-info.gr-row
+								include ../img/fr-custom.svg
+								div
+									span Framework
+									span Custom
+							a(href='#').controll-button.projects-item-button
+								span View project
+							button.controll-button.projects-item-button
+								span Setup Environment
+						ul.projects-cards.projects-row
+							li.projects-card
+								input(type='checkbox').projects-card-checkbox(id='#proj-'+i+'live')
+								.projects-buttons
+									button Setup Environment
+									button Backup Schedule
+									button Stop
+									button Start
+									button Restart
+								.projects-row
+									h6.projects-card-title
+										span Live
+										span short description
+									label(for='#proj-'+i+'live').framework-service-button
+										span
+								.projects-row.projects-card-buttons
+									button.controll-button.projects-card-button WWW
+									button.controll-button.projects-card-button
+										include ../img/php.svg
+								hr
+								.projects-row
+									.projects-card-info.gr-row
+										include ../img/Question.svg
+										div
+											span Status
+											span Up & Running
+									.projects-card-info.gr-row
+										include ../img/Eye.svg
+										div
+											span Privacy
+											span Public
+							li.projects-card
+								input(type='checkbox').projects-card-checkbox(id='#proj-'+i+'staging')
+								.projects-buttons
+									button Setup Environment
+									button Backup Schedule
+									button Stop
+									button Start
+									button Restart
+								.projects-row
+									h6.projects-card-title
+										span Staging
+										span short description
+									label(for='#proj-'+i+'staging').framework-service-button
+										span
+								.projects-row.projects-card-buttons
+									button.controll-button.projects-card-button WWW
+									button.controll-button.projects-card-button
+										include ../img/php.svg
+								hr
+								.projects-row
+									.projects-card-info.gr-row
+										include ../img/Question.svg
+										div
+											span Status
+											span Up & Running
+									.projects-card-info.gr-row
+										include ../img/Eye.svg
+										div
+											span Privacy
+											span Public
+							li.projects-card
+								input(type='checkbox').projects-card-checkbox(id='#proj-'+i+'dev')
+								.projects-buttons
+									button Setup Environment
+									button Backup Schedule
+									button Stop
+									button Start
+									button Restart
+								.projects-row
+									h6.projects-card-title
+										span Development
+										span short description
+									label(for='#proj-'+i+'dev').framework-service-button
+										span
+								.projects-row.projects-card-buttons
+									button.controll-button.projects-card-button WWW
+									button.controll-button.projects-card-button
+										include ../img/php.svg
+								hr
+								.projects-row
+									.projects-card-info.gr-row
+										include ../img/Question.svg
+										div
+											span Status
+											span Up & Running
+									.projects-card-info.gr-row
+										include ../img/Eye.svg
+										div
+											span Privacy
+											span Public

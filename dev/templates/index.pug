@@ -1,7 +1,7 @@
 extends template/main
 append vars
 	-
-		page_title= 'Главная'
+		page_title= 'Main'
 block aside
 	aside
 		+img('menu.png')
@@ -15,11 +15,11 @@ block content
 					input(placeholder='Search').search-input
 			button.logout
 				include ../img/logout.svg
-		.section.project
+		.section.project.block
 			input(type='checkbox')#project
 			.gr-row.project-first
-				h4.project-title
-					span Project:
+				h4.project-title.block-title
+					span Project name:
 					span tempfordesign
 				label(for='project').project-btn
 					span
@@ -41,7 +41,7 @@ block content
 		.section.framework-section
 			.framework
 				.gr-row
-					h1.framework-title framework
+					h1.framework-title.block-title Enviroment
 				.gr-row.framework-service
 					.framework-service-cont
 						button.framework-service-card
@@ -99,19 +99,19 @@ block content
 									span
 							h4.framework-service-title WWW
 							span.framework-service-time 16 hours
-				.gr-row.framework-controll
-					button.framework-controll-button
+				.gr-row.controll.framework-controll
+					button.controll-button
 						include ../img/stop.svg
 						span Stop
-					button.framework-controll-button
+					button.controll-button
 						include ../img/play.svg
 						span Start
-					button.framework-controll-button
+					button.controll-button
 						include ../img/repeat.svg
 						span Restart
-		.section.team
+		.section.team.block
 			.gr-row.team-first
-				h3.team-title Team
+				h3.team-title.block-title Team
 			.gr-row.team-units
 				button.team-unit
 					span Sheldon Cooper
