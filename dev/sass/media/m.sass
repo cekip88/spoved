@@ -317,6 +317,27 @@ aside
 		margin-top: 10px
 		position: relative
 		&-button
+			+dfc
+			flex-basis: 49px
+			height: 28px
+			border: 2px solid #BABABA
+			box-shadow: 0 0 4px rgba($black,.32)
+			border-radius: 4px
+			position: relative
+			&:after
+				+af
+				+wh(20px,2px)
+				background-color: #BABABA
+				border-radius: 1px
+				position: absolute
+				bottom: -7px
+			svg
+				max-width: 22px
+				margin: 0
+			&:first-child
+				margin-right: 15px
+			&:last-child
+				margin-right: auto
 		&-checkbox
 			display: none
 			&:checked~.projects-buttons
