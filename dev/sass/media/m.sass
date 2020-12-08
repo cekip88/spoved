@@ -26,7 +26,7 @@ aside
 	padding: 20px 10px 10px
 	&-title
 		font-family: $g_medium
-		font-size: 18px
+		font-size: 14px
 .project
 	border-top-right-radius: 4px
 	border-top-left-radius: 4px
@@ -37,7 +37,7 @@ aside
 		background-color: #fff
 	&-title
 		span
-			&:last-child
+			&:nth-child(2)
 				margin-left: 5px
 				font-family: $g_reg
 				text-decoration: underline
@@ -47,7 +47,6 @@ aside
 		align-items: center
 		justify-content: space-between
 		padding: 5px
-		margin-left: auto
 		&:before,&:after,span
 			+af
 			+wh(4px)
@@ -85,6 +84,8 @@ aside
 			font-family: $g_reg
 			font-size: 12px
 			color: #fff
+	.history-button
+		margin: 0 auto
 #project
 	display: none
 	&:checked~.project-url-cont
@@ -235,7 +236,7 @@ aside
 		&-title
 			position: relative
 			padding-left: 7px
-			flex: 0 0 100%
+			flex: 0 0 52%
 			a
 				text-decoration: underline
 			&:before
@@ -251,6 +252,8 @@ aside
 		&:last-child
 			.projects-buttons
 				transform: translateY(-33%)
+	.history-button
+		margin-right: auto
 	&-item,&-card
 		&-title
 			a,span:last-child
@@ -345,4 +348,67 @@ aside
 				width: 196px
 			
 		
-	
+.console
+	padding: 10px
+	background-color: $bgc-dark
+	height: calc(100vh - 66px)
+	&-output
+		height: 50%
+	&-title
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin-bottom: 12px
+	&-button
+		padding: 7px 5px
+		border-radius: 4px
+		background-color: $orange
+		font-family: "Geometria"
+		font-size: 12px
+		color: #fff
+	&-area
+		height: calc(100% - 32px)
+		background-color: #fff
+		padding: 8px 26px
+		overflow: auto
+		border-radius: 4px
+		font-family: $f_book
+		color: $text
+		span
+			display: block
+.history
+	height: calc(50% - 20px)
+	margin-bottom: 20px
+	&-button
+		font-family: $g_medium
+		text-decoration: underline
+		color: $text
+	&-list
+		height: calc(100% - 32px)
+		padding: 1px
+		overflow: auto
+		background-color: #fff
+		border-radius: 4px
+		.list
+			&-item
+				display: flex
+				align-items: center
+				padding: 5px 0 8px
+				&:nth-child(2n)
+					background-color: rgba($blue,.08)
+					.item-circle
+						background-color: rgba($red,.6)
+		.item
+			&-circle
+				+wh(8px)
+				border-radius: 100%
+				background-color: rgba($blue,.8)
+				margin: 0 13px
+			&-number
+				font-family: $f_demi
+				color: $text
+				margin-right: 40px
+			&-date
+				font-family: $f_book
+				color: $text
+				opacity: .6
