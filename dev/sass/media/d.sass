@@ -264,7 +264,10 @@ aside
 				align-items: flex-start
 				justify-content: space-between
 			&-col
-				flex: 0 0 478px
+				flex-shrink: 0
+				flex-grow: 0
+				
+				flex-basis: calc(50% - 21px)
 			&-plus
 				transition: .35s ease
 				&:hover
