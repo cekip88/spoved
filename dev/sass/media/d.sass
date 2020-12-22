@@ -252,3 +252,51 @@ aside
 		transition: .35s ease
 	&-list
 		height: calc(100% - 39px)
+		
+.contacts
+	padding: 31px 65px 30px 30px
+	&-add
+		padding: 0 22px
+		overflow: hidden
+		.add
+			&-cont
+				display: flex
+				align-items: flex-start
+				justify-content: space-between
+			&-col
+				flex: 0 0 478px
+			&-plus
+				transition: .35s ease
+				&:hover
+					transform: scale(1.2)
+	&-button
+		padding: 7px 12px
+	&-head
+		height: auto
+	&-list
+		height: calc(100vh - 248px)
+	&-item
+		.col
+			padding: 7.5px 0
+			flex-basis: calc((100% - 379px) / 2)
+			&:first-child
+					flex-basis: 176px
+			&:last-child
+				padding: 6px 0
+				flex-basis: 203px
+				justify-content: center
+			a
+				transition: .35s ease
+				&:hover
+					transform: scale(1.2)
+					
+#contAdd:checked ~ .contacts
+	.contacts
+		&-add
+			height: calc(100vh - 500px)
+			padding: 39px 22px
+		&-head
+			height: auto
+		&-list
+			height: calc(100vh - 740px)
+			overflow: auto

@@ -1,4 +1,9 @@
 $unit: 'px'
+input[type='checkbox']
+	display: none
+label
+	&:hover
+		cursor: pointer
 aside
 	display: none
 .gr-row
@@ -419,3 +424,109 @@ aside
 				font-family: $f_book
 				color: $text
 				opacity: .6
+				
+.contacts
+	padding: 10px
+	background-color: $bgc-dark
+	&-add
+		height: 0
+		overflow: auto
+		background-color: #fff
+		padding: 0 10px
+		transition: .35s ease
+		.add
+			&-block
+				padding-bottom: 16px
+			&-row
+				display: flex
+				align-items: flex-end
+				justify-content: space-between
+			&-title
+				font-family: $f_book
+				color: rgba($text,.6)
+			&-star
+				height: 10px
+				color: $pink
+				font-size: 18px
+			&-input
+				+w(calc(100% - 5px))
+				padding: 18px 45px 18px 10px
+				border-radius: 4px
+				border: 1px solid $border-gray
+				&::placeholder
+					text-transform: uppercase
+				&-row
+					margin-top: 5px
+					display: flex
+					align-items: center
+					position: relative
+					.indicator
+						+wh(8px)
+						border-radius: 100%
+						position: absolute
+						right: 20px
+						&.accept
+							background-color: $green
+						&.decline
+							background-color: $pink
+			&-plus
+				position: absolute
+				right: 20px
+				svg
+					+wh(16px)
+					display: block
+				path
+					stroke: #000
+			&-btns
+				display: flex
+				justify-content: flex-start
+			&-button
+				+w(110px)
+				margin: 0 6px 0 0
+				text-align: center
+				&.cancel
+					background-color: $bgc-dark
+					color: $text
+	&-button
+		+dfc
+		svg
+			+wh(16px)
+			margin-right: 7px
+		path
+			stroke: #fff
+	&-head
+		height: 42px
+		background-color: rgba($blue,.2)
+		transition: .35s ease
+		.contacts-item
+			font-family: $f_demi
+	&-list
+		height: calc(100vh - 170px)
+		overflow: auto
+		transition: .35s ease
+	&-item
+		+dfi
+		font-family: $f_book
+		&:nth-child(2n)
+			background-color: rgba($blue,.1)
+		.col
+			padding: 5px
+			flex: 0 0 75px
+			text-align: center
+			&:last-child
+				display: flex
+				justify-content: flex-end
+				flex-basis: 55px
+				a
+					&:first-child
+						margin-right: 7px
+						
+#contAdd:checked ~ .contacts
+	.contacts-add
+		height: calc(100vh - 148px)
+		padding: 20px 10px
+		margin-bottom: 20px
+	.contacts
+		&-head,&-list
+			overflow: hidden
+			height: 0
