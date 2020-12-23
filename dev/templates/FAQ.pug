@@ -1,0 +1,113 @@
+extends template/main
+append vars
+	-
+		page_title= 'Contacts Groups'
+block aside
+	aside
+		+img('menu.png')
+block content
+	main
+		input(type='checkbox')#contAdd
+		.section.search
+			form.search-form
+				.gr-row
+					button.search-button
+						include ../img/search.svg
+					input(placeholder='Search').search-input
+			button.logout
+				include ../img/logout.svg
+		.section.fq
+			h4.block-title
+				span F.A.Q.
+			ul.fq-list
+				li.fq-item
+					button.item-btn.item-btn-blue
+						h5.item-title How to create my first project?
+						+img('arrow-bottom.svg')
+					.item-cont
+						.item-icon
+							+img('ArrowsLeftRight.svg')
+						ul.item-list
+							li.item-unit
+								h6.unit-title 1. Create user(s)
+								.unit-img
+									+img('fq-1.jpg')
+							li.item-unit
+								h6.unit-title 2. Create team(s)
+								.unit-img
+									+img('fq-2.jpg')
+							li.item-unit
+								h6.unit-title 3. Add user(s) to the team(s)
+								.unit-img
+									+img('fq-3.jpg')
+							li.item-unit
+								h6.unit-title 3.1 Add user(s) to the team(s)
+								.unit-img
+									+img('fq-4.jpg')
+							li.item-unit
+								h6.unit-title 4. Create the environment(s)
+								.unit-img
+									+img('fq-5.jpg')
+				li.fq-item
+					button.item-btn.item-btn-red
+						h5.item-title How to create my first project?
+						+img('arrow-bottom.svg')
+					.item-cont
+						ul.item-list
+							li.item-unit
+								h6.unit-title 1. Create user(s)
+								p.unit-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+								.unit-img
+									+img('fq-6.jpg')
+				li.fq-item
+					button.item-btn.item-btn-blue
+						h5.item-title How to update the default website?
+						+img('arrow-bottom.svg')
+					.item-cont
+						.item-icon
+							+img('ArrowsLeftRight.svg')
+						ul.item-list
+							li.item-unit
+								h6.unit-title 1. Copy the Git link
+								.unit-img
+									+img('up-1.jpg')
+							li.item-unit
+								h6.unit-title 2. Open the Git manager \ console
+								.unit-img
+									+img('up-2.jpg')
+							li.item-unit
+								h6.unit-title 3. Run copied link
+								.unit-img
+									+img('up-3.jpg')
+				li.fq-item
+					button.item-btn.item-btn-blue
+						h5.item-title How push the updates?
+						+img('arrow-bottom.svg')
+					.item-cont
+						.item-icon
+							+img('ArrowsLeftRight.svg')
+						ul.item-list
+							li.item-unit
+								h6.unit-title 1. Make some changes
+								.unit-img
+									+img('push-1.jpg')
+							li.item-unit
+								h6.unit-title 2. Open the Git manager \ console
+								.unit-img
+									+img('push-2.jpg')
+							li.item-unit
+								h6.unit-title 3. Run the following Git commands
+								.unit-img
+									+img('push-3.jpg')
+							li.item-unit
+								h6.unit-title 3.1 git add
+								.unit-img
+									+img('push-4.jpg')
+							li.item-unit
+								h6.unit-title 3.1 git commit
+								.unit-img
+									+img('push-5.jpg')
+							li.item-unit
+								h6.unit-title 3.2 git push
+								.unit-img
+									+img('push-6.jpg')

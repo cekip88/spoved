@@ -528,3 +528,101 @@ aside
 		&-head,&-list
 			overflow: hidden
 			height: 0
+			
+.fq
+	padding: 10px
+	background-color: $bgc-dark
+	.block-title
+		margin-bottom: 12px
+	&-list
+		height: calc(100vh - 134px)
+		padding-right: 10px
+		overflow: auto
+	&-item
+		margin-bottom: 12px
+		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25)
+		transition: .35s ease
+		&:last-child
+			margin-bottom: 0
+		.item
+			&-btn
+				+w(100%)
+				+dfi
+				padding: 6px 14px
+				border-radius: 4px
+				background-color: rgba($white,.4)
+				border-left: 4px solid transparent
+				transition: .35s ease
+				img
+					transition: .35s ease
+				&-blue
+					border-color: #6D8BF8
+				&-red
+					border-color: $pink
+			&-title
+				font-family: $g_medium
+				color: $text
+			&-cont
+				padding: 0 10px
+				border-radius: 2px
+				background-color: #fff
+				transition: .35s ease
+				position: relative
+			&-icon
+				position: absolute
+				padding-right: 13px
+				padding-left: 5px
+				top: 11px
+				right: 0
+				background-color: #fff
+				img
+					display: block
+					transition: .35s ease
+					height: 0
+			&-list
+				height: 0
+				display: flex
+				overflow: hidden
+				transition: .35s ease
+				&:after
+					+af
+					+wh(1px)
+					flex: 0 0 1px
+			&-unit
+				flex: 0 0 auto
+				max-width: calc(100% - 5px)
+				margin-right: 10px
+				&:last-child
+					margin-right: 3px
+		.unit
+			&-title
+				margin-bottom: 10px
+				font-family: $f_demi
+			&-text
+				font-family: $f_book
+				margin-bottom: 10px
+			&-img
+				border-radius: 8px
+				overflow: hidden
+				box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2)
+				img
+					display: block
+		&.active
+			.item
+				&-btn
+					border-color: transparent
+					img
+						transform: rotate(180deg)
+					&-blue
+						background-color: rgba($blue,.4)
+					&-red
+						background-color: rgba($pink,.4)
+				&-cont
+					margin-top: -2px
+				&-icon
+					img
+						height: 14px
+				&-list
+					height: 200px
+					overflow: auto
+					padding: 10px 0
