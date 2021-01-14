@@ -4,8 +4,108 @@ input[type='checkbox']
 label
 	&:hover
 		cursor: pointer
-aside
-	display: none
+.aside
+	+wh(100%,50px)
+	padding: 0 30px
+	background-color: $aside-bgc
+	overflow: hidden
+	position: absolute
+	top: 0
+	z-index: 100000
+	transition: .35s ease
+	&,a,button
+		+font(16px,$g_medium,$white)
+	&.active
+		height: 100vh
+		.burger
+			&:after
+				margin-left: 5px
+			span
+				margin-left: 10px
+	&-body
+		height: calc(100vh - 50px)
+		padding-bottom: 30px
+		overflow: auto
+	.mobile-row
+		+dfi
+		padding: 10px 0
+	.burger
+		+wh(25px,19px)
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		&:before,&:after
+			+af
+		&:before,&:after,span
+			height: 3px
+			background-color: #fff
+			transition: .35s ease
+		&:before
+			+w(25px)
+		span
+			+w(15px)
+		&:after
+			+w(20px)
+	&-menu
+		padding-top: 10px
+		padding-bottom: 20px
+	&-block
+		&-title
+			padding: 12px 0
+			font-size: 10px
+			text-transform: uppercase
+			letter-spacing: 1.5px
+		&-item
+			padding: 8px 0
+		&-link
+			+wh(40px)
+			+bdrs(20px)
+			display: flex
+			align-items: center
+			background-color: rgba($white,.5)
+			transition: .35s ease
+			&:hover
+				+w(150px)
+		&-icon
+			+wh(40px)
+			+dfc
+			flex: 0 0 40px
+			margin-right: 20px
+	.aside
+		&-terms
+			font-size: 14px
+	&-terms
+		&-link
+			display: inline-block
+			padding: 6px 0
+			&:hover
+				&:after
+					background-color: #fff
+	&-copy
+		margin-top: 20px
+		font-family: $f_book
+		font-size: 14px
+		span
+			display: block
+		&-link
+			font-family: $g_medium
+			&:after
+				background-color: #fff
+				bottom: -2px
+			&:hover
+				&:after
+					background-color: transparent
+	&-copy,&-terms
+		&-link
+			position: relative
+			&:after
+				+af
+				+wh(100%,1px)
+				position: absolute
+				right: 0
+				transition: .35s ease
+main
+	margin-top: 50px
 .gr-row
 	display: flex
 	align-items: center
@@ -356,7 +456,7 @@ aside
 .console
 	padding: 10px
 	background-color: $bgc-dark
-	height: calc(100vh - 66px)
+	height: calc(100vh - 116px)
 	&-output
 		height: 50%
 	&-title
@@ -390,7 +490,7 @@ aside
 			height: 100%
 .history
 	height: calc(50% - 20px)
-	margin-bottom: 20px
+	margin-bottom: 10px
 	&-button
 		font-family: $g_medium
 		text-decoration: underline

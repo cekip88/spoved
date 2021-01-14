@@ -26,6 +26,12 @@ class Front {
 		window.addEventListener('resize',function() {
 			_.fqHeightCheck();
 		});
+		document.querySelector('.aside .burger').addEventListener('click',function (e) {
+			_.asideShowHide();
+		});
+		document.querySelector('.aside-close').addEventListener('click',function (e) {
+			_.asideShowHide();
+		});
 		_.init();
 	}
 	
@@ -149,7 +155,17 @@ class Front {
 			})
 		}
 	}
-	
+
+	asideShowHide(){
+		const _ = this;
+		let aside = document.querySelector('.aside');
+		if (aside.classList.contains('active')){
+			aside.scroll(0,0);
+			aside.classList.remove('active');
+		} else aside.classList.add('active');
+
+	}
+
 	init(){
 		const _ = this;
 		_.fqHeightCheck();

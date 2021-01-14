@@ -13,13 +13,76 @@ body
 		background-color: #D5D5D5
 		border-radius: 3px
 main
-	width: calc(100% - 204px)
+	width: 100%
 	padding-right: 24px
 	padding-left: 36px
-aside
-	display: block
-	flex: 0 0 204px
-
+	margin-top: 0
+.aside
+	+wh(254px,100vh)
+	flex: 0 0 254px
+	padding: 35px 41px
+	position: static
+	*
+		transition: .35s ease
+	&-body
+		display: flex
+		justify-content: space-between
+		flex-direction: column
+		padding-bottom: 50px
+	.burger
+		display: none
+	.mobile-row
+		padding: 0
+	&-block
+		&-title
+			+wh(172px,35px)
+			overflow: hidden
+		&-span
+			+wh(112px,18px)
+			overflow: hidden
+	&-menu
+		padding-top: 36px
+	&-close
+		+wh(20px)
+		+dfc
+		margin-top: 30px
+		margin-bottom: auto
+		position: relative
+		&:before,&:after
+			+af
+			background-color: #fff
+			position: absolute
+			transition: .35s ease
+		&:before,&:after,&-line
+			+wh(20px,2px)
+		&:before
+			transform: rotate(45deg)
+		&:after
+			transform: rotate(-45deg)
+		&-line
+			background-color: transparent
+	&-terms
+		+wh(172px,64px)
+		overflow: hidden
+	&-copy
+		margin: 0
+	&.active
+		.aside
+			&-block-title,&-terms,&-block-span
+				+wh(0)
+				padding: 0
+			&-close
+				margin-top: 0
+				&-line
+					background-color: #fff
+				&:before
+					+w(10px)
+					transform: rotate(0) translate(-5px,-8px)
+				&:after
+					+w(15px)
+					transform: rotate(0) translate(-2.5px,8px)
+			&-copy
+				transform: rotate(-90deg)
 .block
 	padding: 40px
 	&-title
