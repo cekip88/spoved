@@ -162,13 +162,26 @@ class Front {
 		if (aside.classList.contains('active')){
 			aside.scroll(0,0);
 			aside.classList.remove('active');
-		} else aside.classList.add('active');
-
+			localStorage.setItem('asidePosition','disactive')
+		} else {
+			aside.classList.add('active');
+			localStorage.setItem('asidePosition','active')
+		}
 	}
+	asideLoad(){
+		let aside = document.querySelector('.aside');
+		if (aside){
+			console.log(aside);
+			if (localStorage.getItem('asidePosition') === 'active') aside.classList.add('active');
+		}
+	}
+
+
 
 	init(){
 		const _ = this;
 		_.fqHeightCheck();
+		_.asideLoad();
 	}
 }
 let front = new Front();

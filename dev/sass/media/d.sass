@@ -19,27 +19,43 @@ main
 	margin-top: 0
 .aside
 	+wh(254px,100vh)
+	display: flex
+	align-items: center
+	flex-direction: column
 	flex: 0 0 254px
 	padding: 35px 41px
 	position: static
 	*
 		transition: .35s ease
+	&-logo
+		+w(172px)
+		overflow: hidden
+		&-cont
+			+w(172px)
 	&-body
+		+w(172px)
 		display: flex
 		justify-content: space-between
 		flex-direction: column
-		padding-bottom: 50px
+		padding-bottom: 10px
 	.burger
 		display: none
 	.mobile-row
 		padding: 0
+	&-menu
+		overflow: hidden
 	&-block
+		&-item
+			a:hover
+				.aside-block-link
+					+w(100%)
 		&-title
 			+wh(172px,35px)
 			overflow: hidden
+		&-icon
+			margin: 0
 		&-span
 			+wh(112px,18px)
-			overflow: hidden
 	&-menu
 		padding-top: 36px
 	&-close
@@ -65,12 +81,23 @@ main
 		+wh(172px,64px)
 		overflow: hidden
 	&-copy
+		+w(172px)
 		margin: 0
 	&.active
+		flex: 0 0 116px
+		padding: 35px 38px
 		.aside
-			&-block-title,&-terms,&-block-span
+			&-logo
+				+w(32px)
+			&-body
+				+w(40px)
+			&-block-item a
+				+w(40px)
+				padding-left: 40px
+			&-block-title,&-terms
 				+wh(0)
 				padding: 0
+				margin: 0
 			&-close
 				margin-top: 0
 				&-line
@@ -82,7 +109,7 @@ main
 					+w(15px)
 					transform: rotate(0) translate(-2.5px,8px)
 			&-copy
-				transform: rotate(-90deg)
+				transform: rotate(-90deg) translate(70px,-69px)
 .block
 	padding: 40px
 	&-title

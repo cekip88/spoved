@@ -57,6 +57,17 @@ label
 			letter-spacing: 1.5px
 		&-item
 			padding: 8px 0
+			a
+				+w(172px)
+				height: 40px
+				display: flex
+				padding-left: 60px
+				align-items: center
+				position: relative
+				overflow: hidden
+				.aside-block-link
+					position: absolute
+					left: 0
 		&-link
 			+wh(40px)
 			+bdrs(20px)
@@ -64,8 +75,6 @@ label
 			align-items: center
 			background-color: rgba($white,.5)
 			transition: .35s ease
-			&:hover
-				+w(150px)
 		&-icon
 			+wh(40px)
 			+dfc
@@ -128,7 +137,7 @@ main
 		font-size: 12px
 
 .block
-	padding: 20px 10px 10px
+	padding: 10px 10px 10px
 	&-title
 		font-family: $g_medium
 		font-size: 14px
@@ -160,7 +169,6 @@ main
 	&-first
 		position: relative
 		padding-bottom: 8px
-		margin-bottom: 8px
 		&:after
 			+af
 			+wh(100%,1px)
@@ -197,24 +205,24 @@ main
 		height: 230px
 
 .framework
-	padding: 20px 0 62px 10px
+	padding: 0 0 62px 10px
 	background-color: $bgc-dark
 	position: relative
 	&-section
 		overflow: hidden
 	&-title
-		+wh(100%,161px)
+		+wh(100%,141px)
 		border-bottom-left-radius: 12px
-		padding: 15px 0 0 5px
+		padding: 10px 0 0 5px
 		background-color: #FCFCFC
 	&-service
 		+w(calc(100% - 15px))
 		padding-top: 2px
-		padding-bottom: 70px
+		padding-bottom: 10px
 		border-bottom-left-radius: 12px
 		overflow: auto
 		position: absolute
-		top: 77px
+		top: 37px
 		left: 15px
 		&:after
 			+af
@@ -328,7 +336,7 @@ main
 		flex-wrap: wrap
 		justify-content: space-between
 	&-list
-		max-height: calc(100vh - 136px)
+		max-height: calc(100vh - 177px)
 		overflow: auto
 	&-item
 		background-color: $bgc-light
@@ -601,7 +609,7 @@ main
 		.contacts-item
 			font-family: $f_demi
 	&-list
-		height: calc(100vh - 170px)
+		height: calc(100vh - 220px)
 		overflow: auto
 		transition: .35s ease
 	&-item
@@ -635,7 +643,7 @@ main
 	.block-title
 		margin-bottom: 12px
 	&-list
-		height: calc(100vh - 134px)
+		height: calc(100vh - 164px)
 		padding-right: 10px
 		overflow: auto
 	&-item
