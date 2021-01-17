@@ -1,0 +1,133 @@
+extends template/main
+append vars
+	-
+		page_title = 'Main'
+block content
+	section.main
+		.login.active
+			.logo
+				+img('logo.png')
+			.login-right
+				form.login-form.active
+					h2.title Log in
+					.add-block
+						.add-row
+							h5.add-title E-mail
+						.add-input-row
+							.login-icon
+								include ../img/IdentificationCard.svg
+							input(type='text').add-input
+					.add-block
+						.add-row
+							h5.add-title Password
+						.add-input-row
+							.login-icon
+								include ../img/LockSimple.svg
+							input(type='password').add-input
+					.login-btns
+						button.login-submit.button-orange Sign in
+						button(type='button').login-forgot Forgot your password?
+					.socials-row
+						a(href='#').socials-link
+							include ../img/apple.svg
+						a(href='#').socials-link
+							include ../img/Google_black.svg
+						a(href='#').socials-link
+							include ../img/facebook-black.svg
+						a(href='#').socials-link
+							include ../img/Discord_black.svg
+						a(href='#').socials-link
+							include ../img/Github_black.svg
+					.login-reg
+						span.login-span Don't have an account yet? &nbsp;
+						button.login-reg-btn Sign up
+				form.registration-form
+					h2.title Registration
+					.add-block
+						.add-input-row
+							input(type='text' value='Your URL: {alias}.apps.mydevcube.com/').add-input
+					.add-block
+						.add-row
+							h5.add-title Alias
+								span.add-star *
+						.add-input-row
+							input(type='text').add-input
+					.add-block
+						.add-row
+							h5.add-title User Name
+								span.add-star *
+						.add-input-row
+							input(type='text').add-input
+					.add-block
+						.add-row
+							h5.add-title E-mail
+								span.add-star *
+						.add-input-row
+							input(type='text').add-input
+					.add-block
+						.add-row
+							h5.add-title Mobile
+						.add-input-row
+							input(type='text').add-input
+					.add-block
+						.add-row
+							h5.add-title Password
+								span.add-star *
+						.add-input-row
+							input(type='text').add-input
+					.add-block
+						.add-row
+							h5.add-title Confirm Password
+								span.add-star *
+						.add-input-row
+							input(type='text').add-input
+					.login-btns
+						button.login-submit.button-orange Save
+						button(type='button').login-submit.button-orange.cancel Cancel
+				button.benefits-link Benefits
+		.benefits
+			h2.title Benefits
+			button.close-btn
+			.benefits-cont
+				ul.benefits-list
+					li.benefits-item
+						.benefits-name Features Name
+						.benefits-trial Trial
+						.benefits-premium Premium
+						.benefits-status Status
+						.benefits-votes # of Votes
+					-for(let i = 0; i < 4; i++)
+						li.benefits-item
+							.benefits-name Custom MVC PHP framework
+							.benefits-trial
+								include ../img/Done.svg
+							.benefits-premium
+								include ../img/Done.svg
+							.benefits-status Available
+							.benefits-votes -
+						li.benefits-item
+							.benefits-name Yii (2.0) framework
+							.benefits-trial
+								include ../img/Done-Not.svg
+							.benefits-premium
+								include ../img/Done.svg
+							.benefits-status Coming soon
+							.benefits-votes 6
+						li.benefits-item
+							.benefits-name Laravel framework
+							.benefits-trial
+								include ../img/Done-Not.svg
+							.benefits-premium
+								include ../img/Done.svg
+							.benefits-status Coming soon
+							.benefits-votes 5
+						li.benefits-item
+							.benefits-name Symphony framework
+							.benefits-trial
+								include ../img/Done-Not.svg
+							.benefits-premium
+								include ../img/Done.svg
+							.benefits-status Coming soon
+							.benefits-votes 2
+
+

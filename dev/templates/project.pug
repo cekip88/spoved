@@ -6,14 +6,7 @@ block aside
 	include parts/aside
 block content
 	main
-		.section.search
-			form.search-form
-				.gr-row
-					button.search-button
-						include ../img/search.svg
-					input(placeholder='Search').search-input
-			button.logout
-				include ../img/logout.svg
+		include parts/search-row
 		.section.project.block
 			input(type='checkbox')#project
 			.gr-row.project-first
@@ -27,17 +20,17 @@ block content
 				.project-url
 					.gr-row
 						span Project URL: https://dmo.apps.mydevcube.com/tempfordesign/site/https://dmo.apps.mydevcube.com/tempfordesign/site/https://dmo.apps.mydevcube.com/tempfordesign/site/
-						button Copy
+						button.button-orange Copy
 					.gr-row
 						span $ git clone http://gogs.apps.mydevcube.com/dmo/tempfordesign.git
-						button Copy
+						button.button-orange Copy
 				.project-url
 					.gr-row
 						span Project URL: https://dmo.apps.mydevcube.com/tempfordesign/site/www
-						button Copy
+						button.button-orange Copy
 					.gr-row
 						span $ git clone http://gogs.apps.mydevcube.com/dmo/tempfordesign.git
-						button Copy
+						button.button-orange Copy
 		.section.framework-section
 			.framework
 				.gr-row
@@ -130,6 +123,6 @@ block content
 					span Development
 		.section.back
 			.gr-row
-				a(href='projects.html').back-button
+				a(href='projects.html').back-button.button-orange
 					include ../img/back-icon.svg
 					span Back

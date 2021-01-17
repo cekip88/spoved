@@ -26,12 +26,28 @@ class Front {
 		window.addEventListener('resize',function() {
 			_.fqHeightCheck();
 		});
-		document.querySelector('.aside .burger').addEventListener('click',function (e) {
-			_.asideShowHide();
-		});
-		document.querySelector('.aside-close').addEventListener('click',function (e) {
-			_.asideShowHide();
-		});
+		if (document.querySelector('.aside')){
+			document.querySelector('.aside .burger').addEventListener('click',function (e) {
+				_.asideShowHide();
+			});
+			document.querySelector('.aside-close').addEventListener('click',function (e) {
+				_.asideShowHide();
+			});
+		}
+		if (document.querySelector('.main>.login')){
+			document.querySelector('.main .login .benefits-link').addEventListener('click',function () {
+				_.benefitsShowHide();
+			});
+			document.querySelector('.main>.benefits .close-btn').addEventListener('click',function () {
+				_.benefitsShowHide();
+			});
+			document.querySelector('.main>.login .login-forgot').addEventListener('click',function () {
+				_.regFormShowHide()
+			});
+			document.querySelector('.main>.login .cancel').addEventListener('click',function () {
+				_.regFormShowHide()
+			})
+		}
 		_.init();
 	}
 	
@@ -176,6 +192,22 @@ class Front {
 		}
 	}
 
+	benefitsShowHide(){
+		const _ = this;
+		let login = document.querySelector('.main>.login'),
+				benefits = document.querySelector('.main>.benefits');
+		login.classList.toggle('active');
+		if (login.classList.contains('active')) benefits.classList.remove('active');
+		else benefits.classList.add('active')
+	}
+	regFormShowHide(){
+		const _ = this;
+		let loginForm = document.querySelector('.main .login-form'),
+				regForm = document.querySelector('.main .registration-form');
+		loginForm.classList.toggle('active');
+		if (loginForm.classList.contains('active')) regForm.classList.remove('active');
+		else regForm.classList.add('active')
+	}
 
 
 	init(){

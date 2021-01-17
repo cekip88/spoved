@@ -22,18 +22,18 @@ main
 	display: flex
 	align-items: center
 	flex-direction: column
-	flex: 0 0 254px
-	padding: 35px 41px
+	flex: 0 0 116px
+	padding: 35px 38px
 	position: static
 	*
 		transition: .35s ease
 	&-logo
-		+w(172px)
+		+w(32px)
 		overflow: hidden
 		&-cont
 			+w(172px)
 	&-body
-		+w(172px)
+		+w(40px)
 		display: flex
 		justify-content: space-between
 		flex-direction: column
@@ -46,23 +46,18 @@ main
 		overflow: hidden
 	&-block
 		&-item
-			a:hover
-				.aside-block-link
-					+w(100%)
+			+w(40px)
 		&-title
-			+wh(172px,35px)
-			overflow: hidden
-		&-icon
+			+wh(0)
+			padding: 0
 			margin: 0
-		&-span
-			+wh(112px,18px)
+			overflow: hidden
 	&-menu
 		padding-top: 36px
 	&-close
 		+wh(20px)
 		+dfc
-		margin-top: 30px
-		margin-bottom: auto
+		margin: 0 0 auto 10px
 		position: relative
 		&:before,&:after
 			+af
@@ -72,46 +67,57 @@ main
 		&:before,&:after,&-line
 			+wh(20px,2px)
 		&:before
-			transform: rotate(45deg)
+			+w(10px)
+			transform: rotate(0) translate(-5px,-8px)
 		&:after
-			transform: rotate(-45deg)
+			+w(15px)
+			transform: rotate(0) translate(-2.5px,8px)
 		&-line
-			background-color: transparent
+			background-color: #fff
 	&-terms
-		+wh(172px,64px)
+		+wh(0)
 		overflow: hidden
 	&-copy
 		+w(172px)
 		margin: 0
 		position: absolute
 		bottom: 40px
+		transform: rotate(-90deg) translate(70px,-69px)
 	&.active
-		flex: 0 0 116px
-		padding: 35px 38px
+		flex: 0 0 254px
+		padding: 35px 41px
 		.aside
 			&-logo
-				+w(32px)
+				+w(172px)
 			&-body
-				+w(40px)
-			&-block-item a
-				+w(40px)
-				padding-left: 40px
-			&-block-title,&-terms
-				+wh(0)
-				padding: 0
-				margin: 0
+				+w(172px)
+			&-block
+				&-item
+					+w(172px)
+					a:hover
+						.aside-block-link
+							+w(100%)
+				&-title
+					+wh(172px,35px)
+				&-icon
+					margin: 0
+				&-span
+					+wh(112px,18px)
+			&-terms
+				+wh(172px,64px)
 			&-close
-				margin-top: 0
+				margin-top: 30px
+				margin-left: 0
 				&-line
-					background-color: #fff
+					background-color: transparent
+				&:before,&:after,&-line
+					+wh(20px,2px)
 				&:before
-					+w(10px)
-					transform: rotate(0) translate(-5px,-8px)
+					transform: rotate(45deg)
 				&:after
-					+w(15px)
-					transform: rotate(0) translate(-2.5px,8px)
+					transform: rotate(-45deg)
 			&-copy
-				transform: rotate(-90deg) translate(70px,-69px)
+				transform: none
 .block
 	padding: 40px
 	&-title
@@ -122,18 +128,24 @@ main
 		transform: scale(1.15)
 
 .search
-	padding: 26px 0 34px
-	&-form:after
-		margin-top: 4px
+	padding: 25px 0 30px
+	&-form
+		+w(80%)
+		margin-right: 40px
+		&:after
+			margin-top: 4px
 	&-button
 		+wh(22px)
 		+dfc
 		flex: 0 0 22px
-		transition: .35s ease
 		&:hover
 			transform: scale(1.15)
 	&-input
 		padding-left: 11px
+	button
+		transition: .35s ease
+		&:hover
+			transform: scale(1.15)
 
 .project
 	padding-bottom: 29px
@@ -157,7 +169,7 @@ main
 		flex-shrink: 0
 		flex-basis: calc(50% - 25px)
 		&:first-child
-			margin-right: 50px
+			margin-right: auto
 		.gr-row
 			padding: 5px 4px 5px 13px
 			margin-bottom: 14px
@@ -318,6 +330,66 @@ main
 		order: 1
 		&:hover
 			color: $blue
+
+.login,.registration
+	&-form
+		+w(514px)
+		max-height: initial
+		&.active
+			padding: 35px 21px
+			margin-bottom: 22px
+.login
+	flex-direction: row
+	.logo
+		margin-right: 185px
+	&-form
+		&.active
+			height: 503px
+		.title
+			margin-bottom: 44px
+		.socials-row
+			margin: 42px auto 58px
+	&-forgot
+		position: relative
+		&:after
+			+af
+			+wh(100%,1px)
+			background-color: transparent
+			transition: .35s ease
+			position: absolute
+		&:hover
+			&:after
+				background-color: $black
+	&-right
+		margin-top: 0
+.registration
+	&-form
+		&.active
+			height: 782px
+.benefits
+	max-width: 964px
+	max-height: 623px
+	padding: 37px
+	.close-btn
+		right: 37px
+		transition: .35s ease
+		&:hover
+			transform: rotate(180deg)
+	&-cont
+		box-shadow: none
+	&-list
+		padding: 0
+	&-name
+		flex: 0 0 40%
+	&-trial,&-premium,&-status,&-votes
+		flex: 0 0 15%
+.button
+	&-orange
+		min-width: 100px
+		transition: .35s ease
+		&:hover
+			transform: scale(1.05)
+
 .console
 	height: calc(100vh - 95px)
 	padding: 30px 65px 30px 30px
@@ -326,10 +398,6 @@ main
 	justify-content: space-between
 	&-title
 		margin-bottom: 15px
-	&-button
-		transition: .35s ease
-		&:hover
-			transform: scale(1.05)
 	&-output
 		flex: 0 0 0
 		flex-basis: calc(100% - 387px)
@@ -352,19 +420,6 @@ main
 	&-add
 		padding: 0 22px
 		overflow: auto
-		.add
-			&-cont
-				display: flex
-				align-items: flex-start
-				justify-content: space-between
-			&-col
-				flex-shrink: 0
-				flex-grow: 0
-				flex-basis: calc(50% - 21px)
-			&-plus
-				transition: .35s ease
-				&:hover
-					transform: scale(1.2)
 	&-button
 		padding: 7px 12px
 	&-head
@@ -385,6 +440,20 @@ main
 				transition: .35s ease
 				&:hover
 					transform: scale(1.2)
+
+.add
+	&-cont
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+	&-col
+		flex-shrink: 0
+		flex-grow: 0
+		flex-basis: calc(50% - 21px)
+	&-plus
+		transition: .35s ease
+		&:hover
+			transform: scale(1.2)
 					
 #contAdd:checked ~ .contacts
 	.contacts

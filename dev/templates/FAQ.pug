@@ -7,14 +7,7 @@ block aside
 block content
 	main
 		input(type='checkbox')#contAdd
-		.section.search
-			form.search-form
-				.gr-row
-					button.search-button
-						include ../img/search.svg
-					input(placeholder='Search').search-input
-			button.logout
-				include ../img/logout.svg
+		include parts/search-row
 		.section.fq
 			h4.block-title
 				span F.A.Q.

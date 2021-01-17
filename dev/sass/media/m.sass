@@ -121,11 +121,13 @@ main
 .search
 	display: flex
 	align-items: center
-	padding: 10px 10px 20px
+	justify-content: space-between
+	flex-wrap: wrap
+	padding: 0 10px 5px
 	&-form
 		+w(100%)
 		padding-top: 8px
-		margin-right: 40px
+		margin-bottom: 5px
 		&:after
 			+af
 			+wh(100%,1px)
@@ -135,7 +137,179 @@ main
 		+w(100%)
 		padding-left: 14px
 		font-size: 12px
+	.name
+		font-family: $f_demi
+		margin: 0 auto
+	.messages,.bell
+		+wh(25px)
+		margin-right: 10px
+		position: relative
+		.marker
+			+wh(14px)
+			+bdrs(100%)
+			border: 3px solid #fff
+			background-color: #C4C4C4
+			transition: .35s ease
+			position: absolute
+			top: 0
+			right: -4px
+			&.active
+				background-color: #05FF00
+	button
+		svg
+			width: 100%
+			height: 100%
 
+
+.main
+	+wh(100%,100vh)
+	+dfc
+	background: url("../../img/Rectangle 1.svg"), url("../../img/Rectangle 2.svg")
+	background-color: #6389F5
+	background-repeat: no-repeat
+	background-size: auto 100%
+	background-position: right center
+	position: relative
+.login,.benefits
+	+dfc
+	flex-direction: column
+	position: absolute
+	opacity: 0
+	visibility: hidden
+	transform: scale(.5)
+	transition: .35s ease
+	&.active
+		visibility: visible
+		opacity: 1
+		transform: scale(1)
+	.title
+		font-family: $g_medium
+		font-size: 24px
+		margin-bottom: 20px
+.login-form.active,.registration-form.active,.benefits
+	+bdrs(4px)
+	border: 1px solid #DFE3E8
+	background-color: #fff
+	box-shadow: 0 0 12px 0 rgba(#000,.18)
+.login,.registration
+	&-form
+		+wh(calc(100vw - 20px),0)
+		max-height: 420px
+		overflow: auto
+		transition: .35s ease
+		&.active
+			height: 100vh
+			padding: 35px 10px
+			margin-bottom: 15px
+.login
+	+wh(100%)
+	padding: 0 10px
+	&-form
+		.socials-row
+			+w(232px)
+			+dfi
+			margin: 20px auto
+		.add
+			&-input
+				padding: 18px 10px 18px 80px
+				&-row
+					position: relative
+	&-icon
+		display: flex
+		align-items: center
+		position: absolute
+		left: 15px
+		&:after
+			+af
+			+wh(1px,30px)
+			margin-left: 15px
+			background-color: #949494
+	&-btns
+		display: flex
+		align-items: center
+	&-submit
+		min-width: 100px
+	&-forgot
+		margin-left: 20px
+	&-reg
+		display: flex
+		justify-content: center
+		&-btn
+			font-family: $g_medium
+			position: relative
+			&:after
+				+af
+				+wh(100%,1px)
+				background-color: $black
+				position: absolute
+				bottom: -2px
+				transition: .35s ease
+			&:hover
+				&:after
+					background-color: transparent
+	&-right
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin-top: 15px
+	.benefits-link
+		+font(24px,$g_medium,#fff)
+		text-transform: uppercase
+		&:after
+			+af
+			+wh(100%,1px)
+			background-color: #fff
+			transition: .35s ease
+		&:hover
+			&:after
+				background-color: transparent
+.registration
+	&-form
+		.add
+			&-input
+				padding: 18px 10px
+.benefits
+	+wh(calc(100% - 20px))
+	padding: 35px 10px
+	background-color: #F0F0F3
+	.title
+		margin-right: auto
+	.close-btn
+		+wh(27px)
+		+dfc
+		position: absolute
+		top: 35px
+		right: 10px
+		&:before,&:after
+			+wh(20px,2px)
+			+af
+			+bdrs(1px)
+			background-color: rgba(#000,.5)
+			position: absolute
+		&:before
+			transform: rotate(45deg)
+		&:after
+			transform: rotate(-45deg)
+	&-cont
+		+wh(100%,calc(100% - 47px))
+		overflow: auto
+		box-shadow: inset 0 0 4px 4px rgba(#000,.1)
+	&-list
+		padding: 0 20px
+	&-item
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		padding: 15px 0
+		&:first-child
+			font-family: $g_medium
+	&-name
+		flex: 0 0 150px
+	&-trial,&-premium,&-status,&-votes
+		flex: 0 0 70px
+		text-align: center
+	&-votes
+		flex: 0 0 90px
 .block
 	padding: 10px 10px 10px
 	&-title
@@ -190,13 +364,6 @@ main
 			padding: 10px 0
 			overflow: auto
 			white-space: pre
-		button
-			padding: 7px 5px
-			border-radius: 4px
-			background-color: $orange
-			font-family: $g_reg
-			font-size: 12px
-			color: #fff
 	.history-button
 		margin: 0 auto
 #project
@@ -314,11 +481,6 @@ main
 	padding: 15px 0
 	&-button
 		margin-left: 15px
-		padding: 4px 22px
-		border-radius: 6px
-		background-color: $orange
-		box-shadow: 0 0 4px 0 rgba(#000,.32)
-		color: $white
 		svg
 			path
 				fill: $white
@@ -460,7 +622,22 @@ main
 				border: 1px solid rgba($black,.12)
 				width: 196px
 			
-		
+
+.button
+	&-orange
+		+dfc
+		padding: 7px 5px
+		border-radius: 4px
+		background-color: $orange
+		font-family: $g_reg
+		font-size: 12px
+		color: #fff
+		box-shadow: 0 0 4px 0 rgba(#000,.2)
+		&.cancel
+			background-color: $bgc-dark
+			color: $text
+			margin-left: 20px
+
 .console
 	padding: 10px
 	background-color: $bgc-dark
@@ -474,14 +651,7 @@ main
 		.block-title
 			margin-right: auto
 	&-button
-		padding: 7px 5px
 		margin-left: 20px
-		border-radius: 4px
-		background-color: $orange
-		font-family: "Geometria"
-		font-size: 12px
-		color: #fff
-		box-shadow: 0 0 4px 0 rgba(#000,.2)
 	&-area
 		height: calc(100% - 32px)
 		background-color: #fff
@@ -515,7 +685,7 @@ main
 				align-items: center
 				padding: 5px 0 8px
 				&:nth-child(2n)
-					background-color: rgba($blue,.08)
+					background-color: rgba(#003FFF,.2)
 					.item-circle
 						background-color: rgba($red,.6)
 		.item
@@ -542,61 +712,7 @@ main
 		background-color: #fff
 		padding: 0 10px
 		transition: .35s ease
-		.add
-			&-block
-				padding-bottom: 16px
-			&-row
-				display: flex
-				align-items: flex-end
-				justify-content: space-between
-			&-title
-				font-family: $f_book
-				color: rgba($text,.6)
-			&-star
-				height: 10px
-				color: $pink
-				font-size: 18px
-			&-input
-				+w(calc(100% - 5px))
-				padding: 18px 45px 18px 10px
-				border-radius: 4px
-				border: 1px solid $border-gray
-				&::placeholder
-					text-transform: uppercase
-				&-row
-					margin-top: 5px
-					display: flex
-					align-items: center
-					position: relative
-					.indicator
-						+wh(8px)
-						border-radius: 100%
-						position: absolute
-						right: 20px
-						&.accept
-							background-color: $green
-						&.decline
-							background-color: $pink
-			&-plus
-				position: absolute
-				right: 20px
-				svg
-					+wh(16px)
-					display: block
-				path
-					stroke: #000
-			&-btns
-				display: flex
-				justify-content: flex-start
-			&-button
-				+w(110px)
-				margin: 0 6px 0 0
-				text-align: center
-				&.cancel
-					background-color: $bgc-dark
-					color: $text
 	&-button
-		+dfc
 		svg
 			+wh(16px)
 			margin-right: 7px
@@ -604,7 +720,7 @@ main
 			stroke: #fff
 	&-head
 		height: auto
-		background-color: rgba($blue,.2)
+		background-color: rgba(#003FFF,.4)
 		transition: .35s ease
 		.contacts-item
 			font-family: $f_demi
@@ -616,7 +732,7 @@ main
 		+dfi
 		font-family: $f_book
 		&:nth-child(2n)
-			background-color: rgba($blue,.1)
+			background-color: rgba(#003FFF,.2)
 		.col
 			padding: 5px
 			flex: 0 0 27%
@@ -626,6 +742,52 @@ main
 				a
 					&:first-child
 						margin-right: 7px
+.add
+	&-block
+		padding-bottom: 16px
+	&-row
+		display: flex
+		align-items: flex-end
+		justify-content: space-between
+	&-title
+		font-family: $f_book
+		color: rgba($text,.6)
+	&-star
+		height: 10px
+		color: $pink
+		font-size: 18px
+	&-input
+		+w(calc(100% - 5px))
+		padding: 18px 45px 18px 10px
+		border-radius: 4px
+		border: 1px solid $border-gray
+		&::placeholder
+			text-transform: uppercase
+		&-row
+			margin-top: 5px
+			display: flex
+			align-items: center
+			position: relative
+			.indicator
+				+wh(8px)
+				border-radius: 100%
+				position: absolute
+				right: 20px
+				&.accept
+					background-color: $green
+				&.decline
+					background-color: $pink
+	&-plus
+		position: absolute
+		right: 20px
+		svg
+			+wh(16px)
+			display: block
+		path
+			stroke: #000
+	&-btns
+		display: flex
+		justify-content: flex-start
 						
 #contAdd:checked ~ .contacts
 	.contacts-add
@@ -722,7 +884,7 @@ main
 					img
 						transform: rotate(180deg)
 					&-blue
-						background-color: rgba($blue,.4)
+						background-color: rgba(#003FFF,.4)
 					&-red
 						background-color: rgba($pink,.4)
 				&-cont

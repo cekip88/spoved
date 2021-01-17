@@ -6,14 +6,7 @@ block aside
 	include parts/aside
 block content
 	main
-		.section.search
-			form.search-form
-				.gr-row
-					button.search-button
-						include ../img/search.svg
-					input(placeholder='Search').search-input
-			button.logout
-				include ../img/logout.svg
+		include parts/search-row
 		.section.projects.block
 			.gr-row.projects-first
 				h3.projects-title.block-title Projects
