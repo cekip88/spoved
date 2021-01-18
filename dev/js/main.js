@@ -38,14 +38,23 @@ class Front {
 			document.querySelector('.main .login .benefits-link').addEventListener('click',function () {
 				_.benefitsShowHide();
 			});
-			document.querySelector('.main>.benefits .close-btn').addEventListener('click',function () {
+			document.querySelector('.main .benefits .close-btn').addEventListener('click',function () {
 				_.benefitsShowHide();
 			});
-			document.querySelector('.main>.login .login-forgot').addEventListener('click',function () {
+			document.querySelector('.main .login-reg-btn').addEventListener('click',function () {
 				_.regFormShowHide()
 			});
-			document.querySelector('.main>.login .cancel').addEventListener('click',function () {
+			document.querySelector('#registration-form .cancel').addEventListener('click',function () {
 				_.regFormShowHide()
+			});
+			document.querySelector('.main .login .login-forgot').addEventListener('click',function () {
+				_.forgotFormShowHide()
+			});
+			document.querySelector('#forgot-form .cancel').addEventListener('click',function () {
+				_.forgotFormShowHide()
+			});
+			window.addEventListener('resize',function () {
+				_.setTableWidth();
 			})
 		}
 		_.init();
@@ -187,7 +196,6 @@ class Front {
 	asideLoad(){
 		let aside = document.querySelector('.aside');
 		if (aside){
-			console.log(aside);
 			if (localStorage.getItem('asidePosition') === 'active') aside.classList.add('active');
 		}
 	}
@@ -203,10 +211,29 @@ class Front {
 	regFormShowHide(){
 		const _ = this;
 		let loginForm = document.querySelector('.main .login-form'),
-				regForm = document.querySelector('.main .registration-form');
+				regForm = document.querySelector('.main #registration-form');
 		loginForm.classList.toggle('active');
 		if (loginForm.classList.contains('active')) regForm.classList.remove('active');
 		else regForm.classList.add('active')
+	}
+	forgotFormShowHide(){
+		const _ = this;
+		let loginForm = document.querySelector('.main .login-form'),
+				forgotForm = document.querySelector('.main #forgot-form');
+		loginForm.classList.toggle('active');
+		if (loginForm.classList.contains('active')) forgotForm.classList.remove('active');
+		else forgotForm.classList.add('active')
+	}
+	setTableWidth(){
+		let table = document.querySelector('.table');
+		if (!table) return;
+		if (window.innerWidth < 1200){
+			table.children[0].setAttribute('style',`width:${(table.children[1].firstElementChild.children.length * 150) - 50}px`)
+			table.children[1].setAttribute('style',`width:${(table.children[1].firstElementChild.children.length * 150) - 50}px`)
+		} else {
+			table.children[0].removeAttribute('style');
+			table.children[1].removeAttribute('style');
+		}
 	}
 
 
@@ -214,6 +241,7 @@ class Front {
 		const _ = this;
 		_.fqHeightCheck();
 		_.asideLoad();
+		_.setTableWidth();
 	}
 }
 let front = new Front();

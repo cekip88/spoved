@@ -83,32 +83,26 @@ block content
 					.add-btns
 						button.button-orange.add-button Save
 						button.button-orange.add-button.cancel Cancel
-			.contacts-head
-				.contacts-item
-					.col
-						span Number of people
-					.col
-						span Group Name
-					.col
-						span Add Time
-					.col
-						span Actions
-			ul.contacts-list
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
-				include parts/contacts-item
+			.table
+				.table-head
+					.table-row
+						.col Number of people
+						.col Group Name
+						.col Add Time
+						.col Actions
+				.table-body
+					-for(let i = 0; i < 30; i++)
+						.table-row
+							.col #20
+							.col We are Group
+							.col Dec 3, 2020 01:26 PM
+							.col
+								button Edit
+		.pagination
+			button
+			button.active 1
+			button 2
+			input(type='text' value=1)
+			button 9
+			button 10
+			button

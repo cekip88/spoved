@@ -1,0 +1,44 @@
+extends template/main
+append vars
+	-
+		page_title= 'Teams'
+block aside
+	include parts/aside
+block content
+	main
+		input(type='checkbox')#contAdd
+		include parts/search-row
+		.section.contacts
+			.console-title
+				h4.block-title
+					span Users
+				button.button-orange.contacts-button
+					svg(width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+						path(d="M6 10.5C8.48528 10.5 10.5 8.48528 10.5 6C10.5 3.51472 8.48528 1.5 6 1.5C3.51472 1.5 1.5 3.51472 1.5 6C1.5 8.48528 3.51472 10.5 6 10.5Z" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
+						path(d="M4.125 6H7.875" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
+						path(d="M6 4.125V7.875" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
+					span Create Team
+				button.manage
+					+img('manage.svg')
+					span Manage Columns
+			.table
+				.table-head
+					.table-row
+						.col ID
+						.col Team Name
+						.col Actions
+				.table-body
+					-for(let i = 0; i < 30; i++)
+						.table-row
+							.col 1047
+							.col default_team
+							.col
+								button Edit
+		.section.pagination
+			button
+			button.active 1
+			button 2
+			input(type='text' value=1)
+			button 9
+			button 10
+			button

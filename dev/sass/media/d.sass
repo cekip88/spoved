@@ -334,7 +334,9 @@ main
 .login,.registration
 	&-form
 		+w(514px)
+		padding: 0 21px
 		max-height: initial
+		overflow: hidden
 		&.active
 			padding: 35px 21px
 			margin-bottom: 22px
@@ -366,6 +368,7 @@ main
 	&-form
 		&.active
 			height: 782px
+
 .benefits
 	max-width: 964px
 	max-height: 623px
@@ -398,6 +401,7 @@ main
 	justify-content: space-between
 	&-title
 		margin-bottom: 15px
+		flex-wrap: wrap
 	&-output
 		flex: 0 0 0
 		flex-basis: calc(100% - 387px)
@@ -422,25 +426,37 @@ main
 		overflow: auto
 	&-button
 		padding: 7px 12px
-	&-head
-		height: auto
-	&-list
-		height: calc(100vh - 248px)
-	&-item
+		margin-left: auto
+.manage
+	margin-left: 30px
+	span
+		&:after
+			transition: .35s ease
+	&:hover
+		span
+			&:after
+				background-color: transparent
+.table
+	&-body
+		height: calc(100vh - 300px)
+	&-row
 		.col
-			padding: 7.5px 0
-			flex-basis: calc((100% - 379px) / 2)
-			&:first-child
-					flex-basis: 176px
-			&:last-child
-				padding: 6px 0
-				flex-basis: 203px
-				justify-content: center
-			a
-				transition: .35s ease
+			button
+				&:after
+					transition: .35s ease
 				&:hover
-					transform: scale(1.2)
+					&:after
+						opacity: 0
 
+.pagination
+	margin: 20px 0 0
+	button,input
+		&:hover
+			color: #fff
+			background-color: rgba(#919EAB,.5)
+			border-color: transparent
+			&:after
+				border-color: #fff
 .add
 	&-cont
 		display: flex

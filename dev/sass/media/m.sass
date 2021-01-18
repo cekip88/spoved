@@ -164,7 +164,7 @@ main
 .main
 	+wh(100%,100vh)
 	+dfc
-	background: url("../../img/Rectangle 1.svg"), url("../../img/Rectangle 2.svg")
+	background: url("../img/Rectangle 1.svg"), url("../img/Rectangle 2.svg")
 	background-color: #6389F5
 	background-repeat: no-repeat
 	background-size: auto 100%
@@ -268,6 +268,8 @@ main
 		.add
 			&-input
 				padding: 18px 10px
+#forgot-form.active
+	height: 260px
 .benefits
 	+wh(calc(100% - 20px))
 	padding: 35px 10px
@@ -622,7 +624,20 @@ main
 				border: 1px solid rgba($black,.12)
 				width: 196px
 			
-
+.manage
+	display: flex
+	align-items: center
+	font-family: $f_demi
+	color: #5E637B
+	img
+		margin-right: 10px
+	span
+		position: relative
+		&:after
+			+af
+			+wh(100%,1px)
+			background-color: #000
+			position: absolute
 .button
 	&-orange
 		+dfc
@@ -647,9 +662,8 @@ main
 	&-title
 		display: flex
 		align-items: center
+		justify-content: space-between
 		margin-bottom: 12px
-		.block-title
-			margin-right: auto
 	&-button
 		margin-left: 20px
 	&-area
@@ -718,30 +732,71 @@ main
 			margin-right: 7px
 		path
 			stroke: #fff
+
+.table
+	width: 100%
+	overflow-x: auto
+	overflow-y: hidden
 	&-head
-		height: auto
 		background-color: rgba(#003FFF,.4)
-		transition: .35s ease
-		.contacts-item
-			font-family: $f_demi
-	&-list
-		height: calc(100vh - 220px)
-		overflow: auto
-		transition: .35s ease
-	&-item
-		+dfi
-		font-family: $f_book
+		font-family: $f_demi
+	&-body
+		height: calc(100vh - 258px)
+		overflow-y: auto
+		overflow-x: hidden
+		&,button
+			font-family: $f_book
+		button
+			position: relative
+			&:after
+				+af
+				+wh(100%,1px)
+				background-color: #000
+				position: absolute
+	&-row
+		display: flex
+		justify-content: space-between
 		&:nth-child(2n)
 			background-color: rgba(#003FFF,.2)
 		.col
-			padding: 5px
-			flex: 0 0 27%
-			text-align: center
+			+dfc
+			flex: 0 0 150px
+			padding: 10px
 			&:last-child
-				flex-basis: 19%
-				a
-					&:first-child
-						margin-right: 7px
+				flex: 0 0 100px
+.pagination
+	+w(288px)
+	margin: 5px auto
+	display: flex
+	align-items: center
+	justify-content: space-between
+	button,input
+		+wh(30px)
+		+bdrs(4px)
+		+dfc
+		border: 1px solid rgba(#919EAB,.5)
+		font-family: $f_book
+		transition: .35s ease
+		&.active
+			border-color: #4267D3
+			color: #4267D3
+	input
+		width: 50px
+		padding: 0 10px
+		text-align: center
+	button
+		&:first-child,&:last-child
+			&:after
+				+af
+				+wh(7px)
+				border-top: 2px solid rgba(#919EAB,.5)
+				border-left: 2px solid rgba(#919EAB,.5)
+		&:first-child
+			&:after
+				transform: rotate(-45deg)
+		&:last-child
+			&:after
+				transform: rotate(135deg)
 .add
 	&-block
 		padding-bottom: 16px
@@ -761,6 +816,7 @@ main
 		padding: 18px 45px 18px 10px
 		border-radius: 4px
 		border: 1px solid $border-gray
+		font-family: $f_book
 		&::placeholder
 			text-transform: uppercase
 		&-row
