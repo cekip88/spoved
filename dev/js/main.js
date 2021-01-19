@@ -1,6 +1,11 @@
 class Front {
 	constructor (){
 		const _ = this;
+
+		_.init();
+	}
+	handlers(){
+		const _ = this;
 		if(document.querySelector(".contacts-add")) {
 			let btns = document.querySelectorAll('.add-plus');
 			btns.forEach(function(btn) {
@@ -57,7 +62,60 @@ class Front {
 				_.setTableWidth();
 			})
 		}
-		_.init();
+
+		let createUserBtn = document.getElementById('create-user');
+		if (createUserBtn) {
+			let form = document.querySelector('#registration-user');
+			createUserBtn.addEventListener('click',function (){
+				_.showHideRegUser(form);
+			});
+			form.querySelector('.cancel').addEventListener('click',function (){
+				_.showHideRegUser(form)
+			})
+		}
+		let createTeamBtn = document.getElementById('create-team');
+		if (createTeamBtn) {
+			let form = document.querySelector('#registration-team');
+			createTeamBtn.addEventListener('click',function (){
+				_.showHideRegUser(form);
+			});
+			form.querySelector('.cancel').addEventListener('click',function (){
+				_.showHideRegUser(form)
+			})
+		}
+
+		let selHeads = document.querySelectorAll('.select-head');
+		if (selHeads.length){
+			selHeads.forEach(function (btn){
+				btn.addEventListener('click',function (){
+					btn.nextElementSibling.classList.toggle('active')
+				})
+			});
+			let btns = document.querySelectorAll('.add-select .select-body .option');
+			btns.forEach(function (btn){
+				btn.addEventListener('click',function (){
+					if (!btn.classList.contains('done'))btn.parentElement.previousElementSibling.firstElementChild.textContent = btn.textContent;
+					btn.parentElement.classList.remove('active');
+					let checks = btn.parentElement.querySelectorAll('label');
+					if (checks.length){
+						let arr = btn.parentElement.parentElement.parentElement.parentElement.parentElement.querySelector('.choosen');
+						arr.textContent = '';
+						checks.forEach(function (label){
+							if (label.firstElementChild.checked){
+								arr.textContent += label.children[2].textContent + ', ';
+							}
+						});
+						arr.textContent = arr.textContent.substr(0,arr.textContent.length - 2);
+					}
+				})
+			})
+		}
+
+	}
+	showHideRegUser(form){
+		let cont = form.parentElement;
+		form.classList.toggle('active');
+		cont.classList.toggle('active');
 	}
 	
 	addNewFields(clickData){
@@ -237,11 +295,13 @@ class Front {
 	}
 
 
+
 	init(){
 		const _ = this;
 		_.fqHeightCheck();
 		_.asideLoad();
 		_.setTableWidth();
+		_.handlers();
 	}
 }
 let front = new Front();

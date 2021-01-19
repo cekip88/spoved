@@ -663,7 +663,12 @@ main
 		display: flex
 		align-items: center
 		justify-content: space-between
+		flex-wrap: wrap
 		margin-bottom: 12px
+		.block-title
+			+w(100%)
+			flex: 0 0 100%
+			margin-bottom: 5px
 	&-button
 		margin-left: 20px
 	&-area
@@ -741,7 +746,7 @@ main
 		background-color: rgba(#003FFF,.4)
 		font-family: $f_demi
 	&-body
-		height: calc(100vh - 258px)
+		height: calc(100vh - 281px)
 		overflow-y: auto
 		overflow-x: hidden
 		&,button
@@ -765,7 +770,7 @@ main
 			&:last-child
 				flex: 0 0 100px
 .pagination
-	+w(288px)
+	+w(100%)
 	margin: 5px auto
 	display: flex
 	align-items: center
@@ -785,18 +790,18 @@ main
 		padding: 0 10px
 		text-align: center
 	button
-		&:first-child,&:last-child
-			&:after
-				+af
-				+wh(7px)
-				border-top: 2px solid rgba(#919EAB,.5)
-				border-left: 2px solid rgba(#919EAB,.5)
-		&:first-child
-			&:after
-				transform: rotate(-45deg)
-		&:last-child
-			&:after
-				transform: rotate(135deg)
+	&-arrow
+		&:after
+			+af
+			+wh(7px)
+			border-top: 2px solid rgba(#919EAB,.5)
+			border-left: 2px solid rgba(#919EAB,.5)
+	&-back
+		&:after
+			transform: rotate(-45deg)
+	&-forward
+		&:after
+			transform: rotate(135deg)
 .add
 	&-block
 		padding-bottom: 16px
@@ -811,12 +816,13 @@ main
 		height: 10px
 		color: $pink
 		font-size: 18px
-	&-input
+	&-input,&-select
 		+w(calc(100% - 5px))
 		padding: 18px 45px 18px 10px
 		border-radius: 4px
 		border: 1px solid $border-gray
 		font-family: $f_book
+	&-input
 		&::placeholder
 			text-transform: uppercase
 		&-row
@@ -833,6 +839,73 @@ main
 					background-color: $green
 				&.decline
 					background-color: $pink
+	&-select
+		height: 54px
+		position: relative
+		.select
+			&-head
+				+dfi
+				+wh(100%)
+			&-body
+				+w(calc(100% + 2px))
+				+bdrs(4px)
+				padding: 0 20px 0 10px
+				display: flex
+				flex-direction: column
+				position: absolute
+				top: 54px
+				left: -1px
+				right: 0
+				z-index: 100
+				max-height: 0
+				background-color: #fff
+				overflow: auto
+				transition: .35s ease
+				&.active
+					max-height: 310px
+					padding: 15px 20px 15px 10px
+				.button
+					display: flex
+					align-items: center
+					height: 31px
+					flex: 0 0 31px
+					background-color: #fff
+					text-align: left
+					padding: 0 20px
+					transition: .35s ease
+					&:nth-child(2n - 1)
+						background-color: rgba(#4467D1,.08)
+					&:hover
+						background-color: rgba(#4467D1,.5)
+				label
+					span:nth-child(2)
+						+wh(15px)
+						flex: 0 0 15px
+						+bdrs(100%)
+						+dfc
+						border: 2px solid #525466
+						margin-right: 10%
+						&:after
+							+af
+							+wh(7px)
+							+bdrs(100%)
+							transition: .35s ease
+					span:nth-child(3)
+						margin-right: auto
+					input:checked
+						&~span
+							&:after
+								background-color: #525466
+				.done
+					font-family: $f_demi
+					min-width: 130px
+					padding: 5px 20px
+					text-align: center
+					background: #FFFFFF
+					box-shadow: 0 0 4px rgba(0, 0, 0, 0.32)
+					border-radius: 4px
+					margin-left: auto
+					margin-top: 10px
 	&-plus
 		position: absolute
 		right: 20px
@@ -952,3 +1025,37 @@ main
 					height: 200px
 					overflow: auto
 					padding: 10px 0
+
+.form
+	+w(90%)
+	max-height: 90%
+	+bdrs(4px)
+	padding: 20px 10px
+	position: absolute
+	background-color: #fff
+	overflow: auto
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.18)
+	&-cont
+		+wh(100%)
+		+dfc
+		background-color: rgba(#fff,.8)
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 100000
+		visibility: hidden
+		opacity: 0
+		transition: .35s ease
+		&.active
+			opacity: 1
+			visibility: visible
+	.choosen
+		color: #000
+	.add
+		&-input,&-select
+			padding: 18px 10px
+
+#registration-team
+	height: 0
+	&.active
+		height: 315px

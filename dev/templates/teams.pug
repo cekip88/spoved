@@ -12,7 +12,7 @@ block content
 			.console-title
 				h4.block-title
 					span Users
-				button.button-orange.contacts-button
+				button.button-orange.contacts-button#create-team
 					svg(width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg")
 						path(d="M6 10.5C8.48528 10.5 10.5 8.48528 10.5 6C10.5 3.51472 8.48528 1.5 6 1.5C3.51472 1.5 1.5 3.51472 1.5 6C1.5 8.48528 3.51472 10.5 6 10.5Z" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
 						path(d="M4.125 6H7.875" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
@@ -34,11 +34,47 @@ block content
 							.col default_team
 							.col
 								button Edit
-		.section.pagination
-			button
-			button.active 1
-			button 2
-			input(type='text' value=1)
-			button 9
-			button 10
-			button
+		include parts/pagination
+		.form-cont
+			form.form.registration-user#registration-team
+				.add-block
+					.add-block
+						.add-row
+							h5.add-title Create Name
+						.add-input-row
+							input(type='text').add-input
+					.add-block
+						.add-row
+							h5.add-title Add User (s)
+						.add-input-row
+							.add-select
+								button(type='button').select-head
+									span Select Team
+									+img('ab.svg')
+								.select-body
+									-for(let i = 0; i < 3; i++)
+										label.button
+											input(type='checkbox')
+											span
+											span Spice Girls
+											span (ID)
+										label.button
+											input(type='checkbox')
+											span
+											span Back Street Boys
+											span (ID)
+										label.button
+											input(type='checkbox')
+											span
+											span Black Star
+											span (ID)
+										label.button
+											input(type='checkbox')
+											span
+											span Spice Rangers
+											span (ID)
+									button(type='button').option.done Done
+					.choosen
+				.login-btns
+					button.login-submit.button-orange Save
+					button(type='button').login-submit.button-orange.cancel Cancel

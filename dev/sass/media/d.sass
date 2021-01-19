@@ -130,7 +130,7 @@ main
 .search
 	padding: 25px 0 30px
 	&-form
-		+w(80%)
+		+w(calc(100% - 300px))
 		margin-right: 40px
 		&:after
 			margin-top: 4px
@@ -402,6 +402,9 @@ main
 	&-title
 		margin-bottom: 15px
 		flex-wrap: wrap
+		.block-title
+			width: auto
+			flex-basis: auto
 	&-output
 		flex: 0 0 0
 		flex-basis: calc(100% - 387px)
@@ -436,11 +439,18 @@ main
 		span
 			&:after
 				background-color: transparent
+	&-table
+		+w(350px)
+		.col
+			flex: 0 0 100px
+			&:nth-child(2)
+				flex: 0 0 150px
 .table
 	&-body
 		height: calc(100vh - 300px)
 	&-row
 		.col
+			flex-basis: (100% / 6)
 			button
 				&:after
 					transition: .35s ease
@@ -449,8 +459,11 @@ main
 						opacity: 0
 
 .pagination
+	width: auto
 	margin: 20px 0 0
+	justify-content: flex-start
 	button,input
+		margin-right: 8px
 		&:hover
 			color: #fff
 			background-color: rgba(#919EAB,.5)
@@ -470,6 +483,12 @@ main
 		transition: .35s ease
 		&:hover
 			transform: scale(1.2)
+	&-select
+		.select
+			&-body
+				padding: 0 35px 0 15px
+				&.active
+					padding: 15px 35px 15px 15px
 					
 #contAdd:checked ~ .contacts
 	.contacts
@@ -508,3 +527,8 @@ main
 					padding-top: 6px
 				&-list
 					padding-top: 15px
+
+.form
+	+wh(523px,auto)
+	padding: 45px 25px
+	overflow: initial
