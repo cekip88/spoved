@@ -6,7 +6,6 @@ block aside
 	include parts/aside
 block content
 	main
-		input(type='checkbox')#contAdd
 		include parts/search-row
 		.section.contacts
 			.console-title
@@ -39,7 +38,10 @@ block content
 							.col default_team
 							.col +77714445566
 							.col
-								button Edit
+								button
+									+img('pen.svg')
+								button
+									+img('circle-x-fill-24.svg')
 		include parts/pagination
 		.form-cont
 			form.form.registration-user#registration-user

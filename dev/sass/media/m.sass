@@ -749,15 +749,15 @@ main
 		height: calc(100vh - 281px)
 		overflow-y: auto
 		overflow-x: hidden
-		&,button
-			font-family: $f_book
-		button
-			position: relative
-			&:after
-				+af
-				+wh(100%,1px)
-				background-color: #000
-				position: absolute
+		transition: .35s ease
+		font-family: $f_book
+		button,a
+			margin-right: 7px
+			transition: .35s ease
+			&:last-child
+				margin-right: 0
+			&:hover
+				transform: scale(1.05)
 	&-row
 		display: flex
 		justify-content: space-between
@@ -920,14 +920,13 @@ main
 						
 #contAdd:checked ~ .contacts
 	.contacts-add
-		height: calc(100vh - 148px)
+		height: calc(100vh - 303px)
 		padding: 20px 10px
 		margin-bottom: 20px
-	.contacts
-		&-head,&-list
-			overflow: hidden
+	.table
+		.table-body
 			height: 0
-			
+
 .fq
 	padding: 10px
 	background-color: $bgc-dark

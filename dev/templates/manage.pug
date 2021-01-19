@@ -6,7 +6,6 @@ block aside
 	include parts/aside
 block content
 	main
-		input(type='checkbox')#contAdd
 		include parts/search-row
 		.section.contacts
 			.console-title
@@ -33,7 +32,10 @@ block content
 							.col 5555
 							.col default_user
 							.col
-								button Edit
+								button
+									+img('pen.svg')
+								button
+									+img('circle-x-fill-24.svg')
 		.section.pagination
 			button.pagination-arrow.pagination-back
 			button.active 1
@@ -42,4 +44,4 @@ block content
 			button 9
 			button 10
 			button.pagination-arrow.pagination-forward
-			a(href='#').button-orange Back
+			a(href='./teams.html').button-orange Back
