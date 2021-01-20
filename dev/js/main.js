@@ -82,6 +82,16 @@ class Front {
 			form.querySelector('.cancel').addEventListener('click',function (){
 				_.showHideRegUser(form)
 			})
+		};
+		let manageBtn = document.getElementById('manage-button');
+		if (manageBtn) {
+			let form = document.querySelector('#manage-form');
+			manageBtn.addEventListener('click',function (){
+				_.showHideRegUser(form);
+			});
+			form.querySelector('.cancel').addEventListener('click',function (){
+				_.showHideRegUser(form)
+			})
 		}
 
 		let selHeads = document.querySelectorAll('.select-head');

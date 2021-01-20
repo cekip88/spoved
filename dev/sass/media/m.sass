@@ -214,6 +214,40 @@ main
 				padding: 18px 10px 18px 80px
 				&-row
 					position: relative
+		&-privacy
+			display: flex
+			align-items: center
+			padding-bottom: 16px
+			a
+				position: relative
+				&:after
+					+af
+					+wh(100%,1px)
+					background-color: #000
+					position: absolute
+					left: 0
+					bottom: -1px
+					transition: .35s ease
+				&:hover
+					&:after
+						background-color: transparent
+			label
+				+dfc
+				+wh(15px)
+				+bdrs(2px)
+				flex: 0 0 15px
+				border: 1px solid #949494
+				margin-right: 10px
+				&:after
+					+af
+					+wh(9px)
+					+bdrs(2px)
+					background-color: transparent
+					transition: .35s ease
+			input:checked ~ label
+				&:after
+					background-color: #949494
+
 	&-icon
 		display: flex
 		align-items: center
@@ -638,6 +672,65 @@ main
 			+wh(100%,1px)
 			background-color: #000
 			position: absolute
+	&-row
+		+dfi
+		.done
+			margin: 0 0 15px 0
+			min-width: initial
+			padding: 5px 10px
+	&-block
+		&-border
+			+bdrs(4px)
+			padding: 30px 20px
+			border: 1px solid #949494
+	&-head
+		height: 31px
+		display: flex
+		align-items: center
+		background-color: rgba(0, 63, 255, 0.4)
+		font-family: $f_demi
+		span
+			flex: 0 0 50%
+			text-align: center
+	&-form
+		.label
+			display: flex
+			align-items: center
+			height: 31px
+			flex: 0 0 31px
+			background-color: #fff
+			text-align: left
+			transition: .35s ease
+			&:nth-child(2n)
+				background-color: rgba(0, 63, 255, 0.2)
+			&:hover
+				background-color: rgba(#4467D1,.5)
+			span:nth-child(2)
+				flex: 0 0 50%
+				text-align: center
+			span:nth-child(3)
+				+wh(15px)
+				+bdrs(100%)
+				+dfc
+				flex: 0 0 15px
+				margin: 0 auto
+				border: 2px solid #525466
+				&:after
+					+af
+					+wh(7px)
+					+bdrs(100%)
+					transition: .35s ease
+			input:checked
+				&~span
+					&:after
+						background-color: #525466
+		.add-title
+			margin-top: 25px
+			margin-bottom: 10px
+	&-btns
+		padding-top: 15px
+		display: flex
+		align-items: center
 .button
 	&-orange
 		+dfc
@@ -767,8 +860,10 @@ main
 			+dfc
 			flex: 0 0 150px
 			padding: 10px
-			&:last-child
+			&-action
 				flex: 0 0 100px
+			&-id
+				flex: 0 0 50px
 .pagination
 	+w(100%)
 	margin: 5px auto
@@ -864,19 +959,6 @@ main
 				&.active
 					max-height: 310px
 					padding: 15px 20px 15px 10px
-				.button
-					display: flex
-					align-items: center
-					height: 31px
-					flex: 0 0 31px
-					background-color: #fff
-					text-align: left
-					padding: 0 20px
-					transition: .35s ease
-					&:nth-child(2n - 1)
-						background-color: rgba(#4467D1,.08)
-					&:hover
-						background-color: rgba(#4467D1,.5)
 				label
 					span:nth-child(2)
 						+wh(15px)
@@ -896,16 +978,19 @@ main
 						&~span
 							&:after
 								background-color: #525466
-				.done
-					font-family: $f_demi
-					min-width: 130px
-					padding: 5px 20px
-					text-align: center
-					background: #FFFFFF
-					box-shadow: 0 0 4px rgba(0, 0, 0, 0.32)
-					border-radius: 4px
-					margin-left: auto
-					margin-top: 10px
+		.button
+			display: flex
+			align-items: center
+			height: 31px
+			flex: 0 0 31px
+			background-color: #fff
+			text-align: left
+			padding: 0 20px
+			transition: .35s ease
+			&:nth-child(2n - 1)
+				background-color: rgba(#4467D1,.08)
+			&:hover
+				background-color: rgba(#4467D1,.5)
 	&-plus
 		position: absolute
 		right: 20px
@@ -917,7 +1002,16 @@ main
 	&-btns
 		display: flex
 		justify-content: flex-start
-						
+.done
+	font-family: $f_demi
+	min-width: 130px
+	padding: 5px 20px
+	text-align: center
+	background: #FFFFFF
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.32)
+	border-radius: 4px
+	margin-left: auto
+	margin-top: 10px
 #contAdd:checked ~ .contacts
 	.contacts-add
 		height: calc(100vh - 303px)
@@ -1027,13 +1121,18 @@ main
 
 .form
 	+w(90%)
-	max-height: 90%
 	+bdrs(4px)
-	padding: 20px 10px
+	height: 0
+	max-height: 90%
+	padding: 0 10px
 	position: absolute
 	background-color: #fff
 	overflow: auto
 	box-shadow: 0 0 12px rgba(0, 0, 0, 0.18)
+	transition: .35s ease
+	&.active
+		height: auto
+		padding: 20px 10px
 	&-cont
 		+wh(100%)
 		+dfc
@@ -1053,8 +1152,6 @@ main
 	.add
 		&-input,&-select
 			padding: 18px 10px
-
-#registration-team
-	height: 0
-	&.active
-		height: 315px
+	.title
+		font-family: $g_medium
+		font-size: 24px

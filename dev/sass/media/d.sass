@@ -369,7 +369,7 @@ main
 .registration
 	&-form
 		&.active
-			height: 782px
+			height: 812px
 
 .benefits
 	max-width: 964px
@@ -447,12 +447,22 @@ main
 			flex: 0 0 100px
 			&:nth-child(2)
 				flex: 0 0 150px
+	&-block
+		&:first-child
+			margin-right: 30px
+		&-border
+			width: 323px
+		&-row
+			display: flex
+			align-items: flex-start
 .table
 	&-body
 		height: calc(100vh - 300px)
 	&-row
 		.col
-			flex-basis: (100% / 6)
+			flex-basis: calc((100% - 200px) / 4)
+			&-id,&-action
+				flex-basis: 100px
 			button
 				&:after
 					transition: .35s ease
@@ -529,6 +539,11 @@ main
 					padding-top: 15px
 
 .form
-	+wh(523px,auto)
-	padding: 45px 25px
-	overflow: initial
+	padding: 0 25px
+	overflow: hidden
+	&.active
+		padding: 45px 25px
+#registration-form
+	+w(523px)
+#manage-form
+	+w(auto)

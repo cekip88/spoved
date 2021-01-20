@@ -17,21 +17,21 @@ block content
 						path(d="M4.125 6H7.875" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
 						path(d="M6 4.125V7.875" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
 					span Create Team
-				a(href='#').manage
+				a(href='#').manage#manage-button
 					+img('manage.svg')
 					span Manage Columns
 			.table
 				.table-head
 					.table-row
-						.col ID
+						.col.col-id ID
 						.col Team Name
-						.col Actions
+						.col.col-action Actions
 				.table-body
 					-for(let i = 0; i < 30; i++)
 						.table-row
-							.col 1047
+							.col.col-id 1047
 							.col default_team
-							.col
+							.col.col-action
 								button
 									+img('pen.svg')
 								a(href='./manage.html')
@@ -82,3 +82,70 @@ block content
 				.login-btns
 					button.login-submit.button-orange Save
 					button(type='button').login-submit.button-orange.cancel Cancel
+			form.form.manage-form#manage-form
+				h2.title Manage Columns
+				.manage-block-row
+					.manage-block
+						.manage-row
+							h5.add-title Used Columns
+						.manage-block-border
+							.manage-row
+								button(type='button').done Remove All
+								button(type='button').done Add to Archive
+							.manage-head
+								span Item
+								span Selected
+							label.label
+								input(type='checkbox')
+								span ID
+								span
+							label.label
+								input(type='checkbox')
+								span Name
+								span
+							label.label
+								input(type='checkbox')
+								span Team
+								span
+							label.label
+								input(type='checkbox')
+								span Framework
+								span
+							label.label
+								input(type='checkbox')
+								span Status
+								span
+					.manage-block
+						.manage-row
+							h5.add-title Archive Columns
+						.manage-block-border
+							.manage-row
+								button(type='button').done Remove All
+								button(type='button').done Add to Archive
+							.manage-head
+								span Item
+								span Selected
+							label.label
+								input(type='checkbox')
+								span ID
+								span
+							label.label
+								input(type='checkbox')
+								span Name
+								span
+							label.label
+								input(type='checkbox')
+								span Team
+								span
+							label.label
+								input(type='checkbox')
+								span Framework
+								span
+							label.label
+								input(type='checkbox')
+								span Status
+								span
+				.manage-btns
+					button.button-orange Save
+					button(type='button').button-orange.cancel Cancel
+
