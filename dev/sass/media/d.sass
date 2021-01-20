@@ -25,8 +25,6 @@ main
 	flex: 0 0 116px
 	padding: 35px 38px
 	position: static
-	*
-		transition: .35s ease
 	&-logo
 		+w(32px)
 		overflow: hidden
@@ -47,6 +45,7 @@ main
 	&-block
 		&-item
 			+w(40px)
+			transition: .35s ease
 		&-title
 			+wh(0)
 			padding: 0
@@ -54,8 +53,11 @@ main
 			display: flex
 			align-items: center
 			overflow: hidden
+			transition: .35s ease
 	&-menu
 		padding-top: 36px
+	&-terms,&-copy,&-logo,&-body,&-close,&-close-line,&-close:before,&-close:after
+		transition: .35s ease
 	&-close
 		+wh(20px)
 		+dfc
@@ -65,7 +67,6 @@ main
 			+af
 			background-color: #fff
 			position: absolute
-			transition: .35s ease
 		&:before,&:after,&-line
 			+wh(20px,2px)
 		&:before
@@ -110,14 +111,16 @@ main
 			&-close
 				margin-top: 30px
 				margin-left: 0
-				&-line
-					background-color: transparent
+				flex-direction: column
 				&:before,&:after,&-line
 					+wh(20px,2px)
+					position: static
+				&:before,&:after
+					width: 10px
 				&:before
-					transform: rotate(45deg)
+					transform: rotate(45deg) translate(1px, 8px)
 				&:after
-					transform: rotate(-45deg)
+					transform: rotate(-45deg) translate(1px,-8px)
 			&-copy
 				transform: none
 .block
