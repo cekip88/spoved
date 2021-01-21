@@ -12,13 +12,33 @@ block content
 			.console-title
 				h4.block-title
 					span Contacts Group
-				label(for='contAdd').button-orange.contacts-button
+				button.button-orange.contacts-button#add-contact
 					svg(width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg")
 						path(d="M6 10.5C8.48528 10.5 10.5 8.48528 10.5 6C10.5 3.51472 8.48528 1.5 6 1.5C3.51472 1.5 1.5 3.51472 1.5 6C1.5 8.48528 3.51472 10.5 6 10.5Z" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
 						path(d="M4.125 6H7.875" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
 						path(d="M6 4.125V7.875" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
 					span Add Contacts Group
-			.contacts-add
+			.table
+				.table-head
+					.table-row
+						.col Number of people
+						.col Group Name
+						.col Add Time
+						.col.col-action Actions
+				.table-body
+					-for(let i = 0; i < 30; i++)
+						.table-row
+							.col #20
+							.col We are Group
+							.col Dec 3, 2020 01:26 PM
+							.col.col-action
+								button
+									+img('pen.svg')
+								button
+									+img('circle-x-fill-24.svg')
+		include parts/pagination
+		.form-cont
+			.contacts-add.form#add-contact-form
 				form
 					.add-cont
 						.add-col.add-col-first
@@ -83,22 +103,3 @@ block content
 					.add-btns
 						button.button-orange.add-button Save
 						button.button-orange.add-button.cancel Cancel
-			.table
-				.table-head
-					.table-row
-						.col Number of people
-						.col Group Name
-						.col Add Time
-						.col.col-action Actions
-				.table-body
-					-for(let i = 0; i < 30; i++)
-						.table-row
-							.col #20
-							.col We are Group
-							.col Dec 3, 2020 01:26 PM
-							.col.col-action
-								button
-									+img('pen.svg')
-								button
-									+img('circle-x-fill-24.svg')
-		include parts/pagination

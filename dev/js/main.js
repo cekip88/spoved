@@ -93,6 +93,28 @@ class Front {
 				_.showHideRegUser(form)
 			})
 		}
+		let addContactBtn = document.getElementById('add-contact');
+		if (addContactBtn) {
+			let form = document.querySelector('#add-contact-form');
+			addContactBtn.addEventListener('click',function (){
+				_.showHideRegUser(form);
+			});
+			form.querySelector('.cancel').addEventListener('click',function (){
+				_.showHideRegUser(form)
+			})
+		}
+		let formCont = document.querySelector('.form-cont');
+		if (formCont){
+			formCont.addEventListener('click',function (e){
+				let target = e.target;
+				if (target.classList.contains('form-cont')){
+					formCont.classList.remove('active');
+					for (let i = 0; i < formCont.children.length; i++) {
+						formCont.children[i].classList.remove('active')
+					}
+				}
+			})
+		}
 
 		let selHeads = document.querySelectorAll('.select-head');
 		if (selHeads.length){
