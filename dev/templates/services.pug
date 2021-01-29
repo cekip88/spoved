@@ -1,0 +1,93 @@
+extends template/main
+append vars
+	-
+		page_title= 'Users'
+block aside
+	include parts/aside
+block content
+	main
+		include parts/search-row
+		.section.contacts
+			.console-title
+				h4.block-title
+					span Services
+			.benefits-cont.services-table
+				ul.benefits-list
+					li.benefits-item
+						.benefits-name Features Name
+						.benefits-trial Trial
+						.benefits-premium Premium
+						.benefits-status Status
+						.benefits-votes # of Votes
+						.benefits-voting Voting
+					-for (let i = 0; i < 4; i++)
+						li.benefits-item
+							.benefits-name Custom MVC PHP framework
+							.benefits-trial
+								include ../img/Done.svg
+							.benefits-premium
+								include ../img/Done.svg
+							.benefits-status Available
+							.benefits-votes -
+							.benefits-voting
+								button.button-orange Vote or die
+						li.benefits-item
+							.benefits-name Yii (2.0) framework
+							.benefits-trial
+								include ../img/Done-Not.svg
+							.benefits-premium
+								include ../img/Done.svg
+							.benefits-status Coming soon
+							.benefits-votes 6
+							.benefits-voting
+								button.button-orange Vote or die
+						li.benefits-item
+							.benefits-name Laravel framework
+							.benefits-trial
+								include ../img/Done-Not.svg
+							.benefits-premium
+								include ../img/Done.svg
+							.benefits-status Coming soon
+							.benefits-votes 5
+							.benefits-voting
+								button.button-orange Vote or die
+						li.benefits-item
+							.benefits-name Symphony framework
+							.benefits-trial
+								include ../img/Done-Not.svg
+							.benefits-premium
+								include ../img/Done.svg
+							.benefits-status Coming soon
+							.benefits-votes 2
+							.benefits-voting
+								button.button-orange Vote or die
+			//.table
+			//	.table-head
+			//		.table-row
+			//			.col Feature Name
+			//			.col.col-id Trial
+			//			.col.col-id Premium
+			//			.col.col-id Status
+			//			.col.col-id # of Votes
+			//			.col.col-action Voting
+			//	.table-body
+			//		-for(let i = 0; i < 30; i++)
+			//			.table-row
+			//				.col Custom MVC PHP framework
+			//				.col.col-id
+			//					include ../img/Done.svg
+			//				.col.col-id ja.g@devcubecom
+			//				.col.col-id default_team
+			//				.col.col-id +77714445566
+			//				.col.col-action
+			//					button
+			//						+img('pen.svg')
+			//					button
+			//						+img('circle-x-fill-24.svg')
+		include parts/pagination
+		.context.active
+			.row
+				.context-icon
+					include ../img/info_outline.svg
+				.context-text
+					p If you would like the feature you are interested in to appear sooner, please cast your vote for it. The features with the most votes will appear first.

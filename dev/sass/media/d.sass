@@ -405,8 +405,10 @@ main
 		padding: 0
 	&-name
 		flex: 0 0 40%
+		max-width: initial
 	&-trial,&-premium,&-status,&-votes
 		flex: 0 0 15%
+		max-width: initial
 .button
 	&-orange
 		min-width: 100px
@@ -570,7 +572,6 @@ main
 	+w(auto)
 #add-contact-form
 	+w(1100px)
-
 .context
 	+w(600px)
 	margin: 0 auto
@@ -582,9 +583,9 @@ main
 	&-icon
 		padding-right: 16px
 	&-text
-		font-size: 18px
 		p
-			line-height: 28px
+			font-size: 18px
+			line-height: 24px
 .logs
 	bottom: 40px
 	left: initial
@@ -595,3 +596,21 @@ main
 	margin-bottom: 18px
 	&:last-child
 		margin-bottom: 0
+	&-close
+		transition: .35s ease
+		&:hover
+			transform: rotate(180deg)
+.main-copy
+	position: fixed
+	bottom: 35px
+	left: 0
+	right: 0
+	a
+		font-weight: 600
+.services-table
+	max-height: calc(100vh - 270px)
+	.benefits
+		&-name
+			flex: 0 0 25%
+		&-trial,&-premium,&-status,&-votes,&-voting
+			flex: 0 0 15%
