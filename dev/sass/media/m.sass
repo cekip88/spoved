@@ -900,6 +900,9 @@ main
 .add
 	&-block
 		padding-bottom: 16px
+		&.error
+			input
+				border-color: $red
 	&-row
 		display: flex
 		align-items: flex-end
@@ -1147,3 +1150,70 @@ main
 	.title
 		font-family: $g_medium
 		font-size: 24px
+.context
+	+bdrs(4px)
+	padding: 20px 10px
+	background-color: #fff
+	box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.18)
+	position: fixed
+	z-index: 10000
+	top: 0
+	&-icon
+		padding-right: 10px
+	&-text
+		color: #4066D4
+	.row
+		display: flex
+		align-items: center
+.logs
+	position: fixed
+	bottom: 0
+	left: 0
+	right: 0
+	z-index: 100000
+.log
+	+bdrs(4px)
+	padding: 10px
+	background-color: #fff
+	margin-bottom: 10px
+	box-shadow: 4px 4px 18px rgba(black,.12)
+	position: relative
+	&:last-child
+		margin-bottom: 0
+	&.error
+		background-color: #FFD8D8
+	&.successful
+		background-color: #E7FFD4
+	&-row
+		margin-bottom: 10px
+		display: flex
+		align-items: center
+	&-theme
+		font-size: 12px
+		font-weight: 600
+		text-transform: uppercase
+	&-date,&-time
+		font-size: 12px
+		margin-left: 10px
+	&-title
+		margin-bottom: 10px
+		font-weight: 600
+	&-text
+		font-family: $f_book
+		font-size: 12px
+		line-height: 18px
+	&-close
+		+wh(30px)
+		+dfc
+		position: absolute
+		right: 10px
+		top: 10px
+		&:before,&:after
+			+af
+			+wh(20px,2px)
+			background-color: rgba(black,.5)
+			position: absolute
+		&:before
+			transform: rotate(45deg)
+		&:after
+			transform: rotate(-45deg)

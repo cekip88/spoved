@@ -26,12 +26,14 @@ main
 	padding: 35px 38px
 	position: static
 	&-logo
-		+w(32px)
+		+w(30px)
 		overflow: hidden
 		&-cont
 			+w(172px)
+			transition: .35s ease
+			transform: scale(.9) translateX(-10px)
 	&-body
-		+w(40px)
+		+w(30px)
 		display: flex
 		justify-content: space-between
 		flex-direction: column
@@ -44,7 +46,8 @@ main
 		overflow: hidden
 	&-block
 		&-item
-			+w(40px)
+			+w(30px)
+			padding: 0
 			transition: .35s ease
 		&-title
 			+wh(0)
@@ -54,6 +57,12 @@ main
 			align-items: center
 			overflow: hidden
 			transition: .35s ease
+		&-icon
+			+wh(30px)
+			flex: 0 0 30px
+			transition: .35s ease
+		&-link
+			+wh(30px)
 	&-menu
 		padding-top: 36px
 	&-terms,&-copy,&-logo,&-body,&-close,&-close-line,&-close:before,&-close:after
@@ -61,7 +70,7 @@ main
 	&-close
 		+wh(20px)
 		+dfc
-		margin: 0 0 auto 10px
+		margin: 0 0 auto 5px
 		position: relative
 		&:before,&:after
 			+af
@@ -82,30 +91,37 @@ main
 		overflow: hidden
 	&-copy
 		+w(172px)
+		opacity: 0
 		margin: 0
 		position: absolute
 		bottom: 40px
-		transform: rotate(-90deg) translate(70px,-69px)
 	&.active
 		flex: 0 0 254px
 		padding: 35px 41px
 		.aside
 			&-logo
 				+w(172px)
+				&-cont
+					transform: none
 			&-body
 				+w(172px)
 			&-block
 				&-item
 					+w(172px)
+					padding: 8px 0
 					a:hover
 						.aside-block-link
 							+w(100%)
 				&-title
 					+wh(172px,35px)
 				&-icon
+					+wh(40px)
+					flex: 0 0 40px
 					margin: 0
 				&-span
 					+wh(112px,18px)
+				&-link
+					+wh(40px)
 			&-terms
 				+wh(172px,64px)
 			&-close
@@ -122,7 +138,7 @@ main
 				&:after
 					transform: rotate(-45deg) translate(1px,-8px)
 			&-copy
-				transform: none
+				opacity: 1
 .block
 	padding: 40px
 	&-title
@@ -554,3 +570,28 @@ main
 	+w(auto)
 #add-contact-form
 	+w(1100px)
+
+.context
+	+w(600px)
+	margin: 0 auto
+	padding: 16px
+	left: 0
+	right: 0
+	bottom: 40px
+	top: initial
+	&-icon
+		padding-right: 16px
+	&-text
+		font-size: 18px
+		p
+			line-height: 28px
+.logs
+	bottom: 40px
+	left: initial
+	right: 20px
+.log
+	max-width: 352px
+	padding: 16px
+	margin-bottom: 18px
+	&:last-child
+		margin-bottom: 0
