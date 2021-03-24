@@ -1,0 +1,318 @@
+extends template/main
+append vars
+	-
+		page_title = 'Manage'
+block aside
+	include parts/aside
+block content
+	main
+		include parts/search-row
+		.section.details <!--.premium-->
+			.details-aside
+				h1.details-title.block-title
+					span Account details
+				ul.details-aside-list
+					li.details-aside-item
+						a(href='#').details-aside-button
+							span Profile information
+							span Personal information, E-mail, Mobile, Bio
+					li.details-aside-item
+						a(href='#').details-aside-button
+							span Account settings
+							span User Name, E-mail notification, plan settings
+					li.details-aside-item
+						a(href='#').details-aside-button
+							span Password
+							span Password change, account protection
+					li.details-aside-item
+						a(href='#').details-aside-button
+							span Social profiles
+							span Links to social networks, personal website and Git
+					li.details-aside-item
+						a(href='#').details-aside-button
+							span Active session
+							span Account login manage
+					li.details-aside-item
+						a(href='#').details-aside-button
+							span Delete account
+							span Delete account and account data
+				a(href='#').trial.premium-offer
+					span GO&nbsp;
+					span PREMIUM
+			.details-blocks
+				h3.profile-title
+					span Profile Information
+				.details-block
+					.profile-information
+						.desktop-row.jcsb
+							.row
+								.profile-information-photo
+									+img('profile-photo.jpg')
+								.profile-information-info
+									h5.profile-information-name
+										span Tomas Anderson
+									.profile-hint Update or manage your account
+									.row
+										button.button-orange
+											+img('ArrowsClockwise.svg')
+											span Upload new image
+										button.button-orange.cancel
+											span Delete
+							.premium.status
+								+img('star.svg')
+								span Premium
+							.trial.status
+								span Trial
+					form.profile-form
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title Name
+							.add-input-row
+								input(type='text' placeholder='Tomas' disabled).add-input
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title Surname
+							.add-input-row
+								input(type='text' placeholder='Anderson' disabled).add-input
+						.profile-button.row
+							.profile-button-block.active
+								button.button-orange
+									span Edit
+							.profile-button-block.row
+								button.button-orange
+									span Save
+								button.button-orange.cancel
+									span Cancel
+					form.profile-form
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title E-mail
+							.add-input-row
+								input(type='text' placeholder='t.anderson@devcube.com' disabled).add-input
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title Mobile
+							.add-input-row
+								input(type='text' placeholder='+77714445566' disabled).add-input
+						.profile-button.row
+							.profile-button-block.active
+								button.button-orange
+									span Edit
+							.profile-button-block.row
+								button.button-orange
+									span Save
+								button.button-orange.cancel
+									span Cancel
+					form.profile-form
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title E-mail
+							.add-input-row
+								textarea( placeholder='t.anderson@devcube.com' disabled).add-input
+						.profile-button.row
+							.profile-button-block.active
+								button.button-orange
+									span Edit
+							.profile-button-block.row
+								button.button-orange
+									span Save
+								button.button-orange.cancel
+									span Cancel
+				h2.profile-title
+					span Account settings
+				.details-block
+					form.profile-form
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title User Name
+							.add-input-row
+								input(type='text' placeholder='tomasanderson' disabled).add-input
+						.profile-button.row
+							.profile-button-block.active
+								button.button-orange
+									span Edit
+							.profile-button-block.row
+								button.button-orange
+									span Save
+								button.button-orange.cancel
+									span Cancel
+					form.profile-form
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title E-mail notification
+							.profile-checkboxes
+								.profile-checkbox
+									label.profile-label
+										input(type='checkbox')
+										div
+										span Invites me to joint project ownership
+								.profile-checkbox
+									label.profile-label
+										input(type='checkbox')
+										div
+										span Update notifications
+								.profile-checkbox
+									label.profile-label
+										input(type='checkbox')
+										div
+										span Invites me to joint project ownership
+								.profile-checkbox
+									label.profile-label
+										input(type='checkbox')
+										div
+										span Update notifications
+								.profile-checkbox
+									label.profile-label
+										input(type='checkbox')
+										div
+										span Invites me to joint project ownership
+								.profile-checkbox
+									label.profile-label
+										input(type='checkbox')
+										div
+										span Update notifications
+					form.profile-form
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title Plan settings
+							.row
+								button.button-orange
+									span Renew
+								button.button-orange.cancel
+									span Unsubscribe
+				h2.profile-title
+					span Password
+				.details-block
+					form.profile-form
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title Old password
+							.add-input-row
+								input(type='password' disabled).add-input
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title New password
+							.add-input-row
+								input(type='password' disabled).add-input
+						.profile-button.row
+							.profile-button-block.active
+								button.button-orange
+									span Edit
+							.profile-button-block.row
+								button.button-orange
+									span Save
+								button.button-orange.cancel
+									span Cancel
+				h2.profile-title
+					span Social profiles
+				.details-block
+					form.profile-form
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title Apple ID
+							.add-input-row
+								input(type='text' value='link.to/url' disabled).add-input
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title Google
+							.add-input-row
+								input(type='text' value='link.to/url' disabled).add-input
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title Facebook
+							.add-input-row
+								input(type='text' value='link.to/url' disabled).add-input
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title Linkedin
+							.add-input-row
+								input(type='text' value='link.to/url' disabled).add-input
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title Discord
+							.add-input-row
+								input(type='text' value='link.to/url' disabled).add-input
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title GitHub
+							.add-input-row
+								input(type='text' value='link.to/url' disabled).add-input
+						.profile-form-block.add-block
+							.add-row
+								h5.add-title CodePen
+							.add-input-row
+								input(type='text' value='link.to/url' disabled).add-input
+						.profile-button.row
+							.profile-button-block.active
+								button.button-orange
+									span Edit
+							.profile-button-block.row
+								button.button-orange
+									span Save
+								button.button-orange.cancel
+									span Cancel
+				h2.profile-title
+					span Active session
+				.details-block
+					ul.profile-sessions
+						li.profile-session
+							.desktop-row
+								.session-block
+									h6.session-title
+										span Current session
+									span.session-source Windows, Chrome
+									span.session-details 193.41.131.162 Utah, USA
+								.session-block
+									span 21 March
+									span 11:19 AM
+									span Sunday
+								.session-block.session-button
+									button.button-orange
+										span Terminate
+						li.profile-session
+							.desktop-row
+								.session-block
+									h6.session-title
+										span Current session
+									span.session-source Windows, Chrome
+									span.session-details 193.41.131.162 Utah, USA
+								.session-block
+									span 21 March
+									span 11:19 AM
+									span Sunday
+								.session-block.session-button
+									button.button-orange
+										span Terminate
+						li.profile-session
+							.desktop-row
+								.session-block
+									h6.session-title
+										span Current session
+									span.session-source Windows, Chrome
+									span.session-details 193.41.131.162 Utah, USA
+								.session-block
+									span 21 March
+									span 11:19 AM
+									span Sunday
+								.session-block.session-button
+									button.button-orange
+										span Terminate
+					button.session-terminate
+						span Terminate all other sessions
+				h2.profile-title
+					span Delete account
+				.details-block
+					p.details-desc Want to delete your account? This account is in two groups and has three projects. Deleting an account will delete all of its contents and all associated data.
+					button.button-orange
+						span Delete
+				.minilogo
+					a(href='#')
+						+img('minilogo.png')
+		.context.active
+			.row
+				.context-icon
+					include ../img/info_outline.svg
+				.context-text
+					p Removing payment method "Master Card • 1289".
+				.context-close
+					button.log-close.error-close

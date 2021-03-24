@@ -614,3 +614,110 @@ main
 			flex: 0 0 25%
 		&-trial,&-premium,&-status,&-votes,&-voting
 			flex: 0 0 15%
+
+
+.details
+	height: calc(100vh - 95px)
+	margin: 0
+	padding: 0 0 16px
+	display: flex
+	align-items: flex-start
+	&-aside
+		margin-right: auto
+		margin-bottom: 0
+		display: flex
+		flex-direction: column
+		height: 100%
+		&-list
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+		&-button
+			width: 332px
+			margin-top: 12px
+			display: block
+			padding: 6px 0 7px 11px
+			border-left: 4px solid transparent
+			border-radius: 4px 0 0 4px
+			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25)
+			transition: .35s ease
+			&:hover
+				border-color: #6D8BF8
+			span
+				display: block
+			span:first-child
+				font-family: $g_reg
+				font-size: 24px
+			span:last-child
+				font-family: $f_book
+				color: $text
+	.desktop-row
+		display: flex
+		align-items: center
+	.premium
+		display: none
+		&-offer
+			margin-top: auto
+			margin-bottom: 96px
+			text-align: center
+			font-size: 24px
+	.minilogo
+		text-align: right
+	&-blocks
+		width: calc(100% - 370px)
+		height: 100%
+		padding: 28px 50px 50px 33px
+		overflow: auto
+	&-block
+		margin-bottom: 44px
+		padding: 22px
+		border-radius: 4px
+		&:nth-child(2)
+			padding: 44px 22px 22px
+		&:last-child
+			margin-bottom: 0
+
+.profile
+	&-title
+		margin-top: 0
+		font-size: 24px
+	&-information
+		margin-bottom: 18px
+		&-photo
+			margin: 0 10px
+		&-info
+			margin: 0
+		&-name
+			font-size: 24px
+	&-button
+		height: 27px
+		position: relative
+		&-block
+			position: absolute
+			opacity: 0
+			visibility: hidden
+			transition: .35s ease
+			&.active
+				opacity: 1
+				visibility: visible
+			button
+				min-width: 100px
+	&-sessions
+		.desktop-row
+			align-items: stretch
+	&-session
+		&:after
+			margin: 27px 0
+.session
+	&-block
+		margin-left: 80px
+		margin-bottom: 0
+		justify-content: space-between
+		&:first-child
+			margin-left: 0
+	&-title
+		font-size: 24px
+	&-button
+		+dfc
+	&-terminate
+		margin-top: 27px

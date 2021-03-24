@@ -1177,6 +1177,8 @@ main
 	.row
 		display: flex
 		align-items: center
+	&-close
+		margin-left: auto
 .logs
 	position: fixed
 	bottom: 0
@@ -1246,3 +1248,173 @@ main
 	position: static
 	margin-left: 10px
 	margin-right: -10px
+
+.details
+	padding: 0 10px
+	margin-top: 20px
+	height: calc(100vh - 141px)
+	overflow: auto
+	&-aside
+		&-list
+			display: none
+		margin-bottom: 10px
+	&-blocks
+		padding: 28px 10px 50px 10px
+		background: #F0F0F3
+		border-radius: 4px
+	&-block
+		padding: 10px
+		background-color: $white
+	&-desc
+		margin-bottom: 10px
+	.minilogo
+		text-align: center
+	.status
+		+dfc
+		font-family: $g_bold
+		font-size: 24px
+		text-transform: uppercase
+		margin: 10px 0
+		&.premium
+			color: rgb(252,230,0)
+	.premium
+		display: none
+		&-offer
+			margin-top: 10px
+			display: block
+			span
+				font-family: $g_bold
+			span:first-child
+				color: #9798A3
+			span:last-child
+				color: #FCE600
+	&.premium
+		.trial
+			display: none
+		.premium
+			display: flex
+	.row
+		display: flex
+		align-items: center
+	.jcsb
+		justify-content: space-between
+
+.profile
+	&-title
+		margin-top: 30px
+		margin-bottom: 11px
+		font-family: $g_medium
+		font-size: 18px
+		&:first-child
+			margin-top: 0
+	&-information
+		&-photo
+			+wh(80px)
+			+bdrs(100%)
+			overflow: hidden
+			img
+				+wh(100%)
+				object-fit: cover
+				object-position: center
+		&-info
+			margin-left: 10px
+			button
+				img
+					display: none
+			.row
+				align-items: stretch
+		&-name
+			font-family: $g_medium
+			font-size: 18px
+	&-hint
+		margin-bottom: 10px
+		font-family: $f_book
+		color: $text
+	&-form
+		padding-bottom: 16px
+		&:after
+			+af
+			+wh(100%,1px)
+			background-color: rgba(148,148,148,.5)
+			margin-top: 16px
+		&:last-child
+			padding-bottom: 0
+			&:after
+				content: none
+		&-block
+			textarea.add-input
+				height: 128px
+				background-color: transparent
+			.add-input
+				width: 100%
+				border-color: rgb(148,148,148)
+				&::placeholder
+					color: rgba($text,.5)
+			&:last-child
+				padding-bottom: 0
+	&-button
+		height: 27px
+		position: relative
+		&-block
+			position: absolute
+			opacity: 0
+			visibility: hidden
+			transition: .35s ease
+			&.active
+				opacity: 1
+				visibility: visible
+			button
+				min-width: 100px
+	&-checkboxes
+		margin-top: 10px
+	&-checkbox
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+	&-label
+		display: flex
+		align-items: center
+		div
+			+wh(15px)
+			+dfc
+			margin-right: 20px
+			border: 2px solid #525466
+			border-radius: 100%
+			&:after
+				+af
+				+wh(7px)
+				border-radius: 100%
+				transition: .35s ease
+		input:checked ~ div
+			&:after
+				background-color: #525466
+	&-session
+		&:after
+			+af
+			+wh(100%,1px)
+			margin: 15px 0
+			background-color: rgba($text,.3)
+		&:last-child
+			&:after
+				content: none
+
+
+.session
+	&-block
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+	&-title
+		font-family: $g_medium
+		font-size: 18px
+	&-source
+		margin: 5px 0
+	&-details
+		color: rgba($text,.5)
+	&-terminate
+		margin-top: 15px
+		font-family: $g_medium
+		text-decoration: underline
