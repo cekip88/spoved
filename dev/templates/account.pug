@@ -7,7 +7,7 @@ block aside
 block content
 	main
 		include parts/search-row
-		.section.details <!--.premium-->
+		.section.details.trial <!--.premium-->
 			.details-aside
 				h1.details-title.block-title
 					span Account details
@@ -40,7 +40,7 @@ block content
 					span GO&nbsp;
 					span PREMIUM
 			.details-blocks
-				h3.profile-title
+				h2.profile-title.details-block-title
 					span Profile Information
 				.details-block
 					.profile-information
@@ -68,12 +68,12 @@ block content
 							.add-row
 								h5.add-title Name
 							.add-input-row
-								input(type='text' placeholder='Tomas' disabled).add-input
+								input(type='text' value='Tomas' disabled).add-input
 						.profile-form-block.add-block
 							.add-row
 								h5.add-title Surname
 							.add-input-row
-								input(type='text' placeholder='Anderson' disabled).add-input
+								input(type='text' value='Anderson' disabled).add-input
 						.profile-button.row
 							.profile-button-block.active
 								button.button-orange
@@ -88,12 +88,12 @@ block content
 							.add-row
 								h5.add-title E-mail
 							.add-input-row
-								input(type='text' placeholder='t.anderson@devcube.com' disabled).add-input
+								input(type='text' value='t.anderson@devcube.com' disabled).add-input
 						.profile-form-block.add-block
 							.add-row
 								h5.add-title Mobile
 							.add-input-row
-								input(type='text' placeholder='+77714445566' disabled).add-input
+								input(type='text' value='+77714445566' disabled).add-input
 						.profile-button.row
 							.profile-button-block.active
 								button.button-orange
@@ -106,9 +106,9 @@ block content
 					form.profile-form
 						.profile-form-block.add-block
 							.add-row
-								h5.add-title E-mail
+								h5.add-title Bio
 							.add-input-row
-								textarea( placeholder='t.anderson@devcube.com' disabled).add-input
+								textarea( value='t.anderson@devcube.com' disabled).add-input
 						.profile-button.row
 							.profile-button-block.active
 								button.button-orange
@@ -118,7 +118,7 @@ block content
 									span Save
 								button.button-orange.cancel
 									span Cancel
-				h2.profile-title
+				h2.profile-title.details-block-title
 					span Account settings
 				.details-block
 					form.profile-form
@@ -126,7 +126,7 @@ block content
 							.add-row
 								h5.add-title User Name
 							.add-input-row
-								input(type='text' placeholder='tomasanderson' disabled).add-input
+								input(type='text' value='tomasanderson' disabled).add-input
 						.profile-button.row
 							.profile-button-block.active
 								button.button-orange
@@ -171,16 +171,58 @@ block content
 										input(type='checkbox')
 										div
 										span Update notifications
-					form.profile-form
-						.profile-form-block.add-block
+					form.profile-form.profile-card-block.desktop-row
+						.profile-tariff
 							.add-row
 								h5.add-title Plan settings
 							.row
+								h5.profile-title
+									span Your tariff plan:&nbsp;
+									strong.premium PREMIUM
+									strong.trial Trial
+							.row
+								a(href='#').tariff-link See the possibilities
+							.row.premium
+								span.tariff-payInformation The tariff is paid before: 05/29/2021
+							.row.premium
+								a(href='#').tariff-link Payment history
+							.row.premium
 								button.button-orange
 									span Renew
 								button.button-orange.cancel
 									span Unsubscribe
-				h2.profile-title
+							.row.trial
+								button.button-orange.premium-button
+									span Go premium
+						.profile-card.row
+							.card.card-main
+								.card-logo
+									+img('mastercard.png')
+								.card-text
+									span.card-numbers
+										+img('dots.png')
+										|1289
+								.card-date
+									span 09/25
+								.card-bgc
+								.card-name
+									span Main
+								button.card-delete
+									+img('close.svg')
+							.card.card-additional
+								.card-logo
+								.card-text
+									a(href='#')
+										span Add Adittional
+										span Credit Card
+								.card-date
+									span 00/00
+								.card-bgc
+								.card-name
+									span Additional
+								button.card-delete
+									+img('close.svg')
+				h2.profile-title.details-block-title
 					span Password
 				.details-block
 					form.profile-form
@@ -203,7 +245,7 @@ block content
 									span Save
 								button.button-orange.cancel
 									span Cancel
-				h2.profile-title
+				h2.profile-title.details-block-title
 					span Social profiles
 				.details-block
 					form.profile-form
@@ -251,7 +293,7 @@ block content
 									span Save
 								button.button-orange.cancel
 									span Cancel
-				h2.profile-title
+				h2.profile-title.details-block-title
 					span Active session
 				.details-block
 					ul.profile-sessions
@@ -299,7 +341,7 @@ block content
 										span Terminate
 					button.session-terminate
 						span Terminate all other sessions
-				h2.profile-title
+				h2.profile-title.details-block-title
 					span Delete account
 				.details-block
 					p.details-desc Want to delete your account? This account is in two groups and has three projects. Deleting an account will delete all of its contents and all associated data.
@@ -308,7 +350,53 @@ block content
 				.minilogo
 					a(href='#')
 						+img('minilogo.png')
-		.context.active
+		.cardAdd <!--active-->
+			form.cardAdd-inner
+				.desktop-row
+					h2.profile-title
+						span Add main card
+					.cardAdd-type.row
+						input(type='radio' name='card-type' checked)#visa
+						label(for='visa')
+							+img('Visa.svg')
+						input(type='radio' name='card-type')#mastercard
+						label(for='mastercard')
+							+img('Mastercard.svg')
+						input(type='radio' name='card-type')#jbc
+						label(for='jbc')
+							+img('JCB.svg')
+						input(type='radio' name='card-type')#discover
+						label(for='discover')
+							+img('Discover.svg')
+				.desktop-row
+					.cardAdd-left
+						.cardAdd-input-inner
+							.cardAdd-input-block
+								span Card number
+								input(type='text')
+							.cardAdd-input-row
+								.cardAdd-input-block
+									span Name and surname on the card
+									input(type='text')
+								.cardAdd-input-block
+									span MM/YY
+									input(type='text')
+						.cardAdd-bgc
+							+img('cardAdd-left.png')
+					.cardAdd-right
+						.cardAdd-input-inner
+							.cardAdd-input-block
+								span CVV
+								input(type='text')
+						.cardAdd-bgc
+							+img('cardAdd-right.png')
+				span.cardAdd-note *Information about your payment methods is stored securely.
+				.row
+					button.button-orange
+						span Save
+					button.button-orange.cancel
+						span Cancel
+		.context <!--active-->
 			.row
 				.context-icon
 					include ../img/info_outline.svg

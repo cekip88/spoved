@@ -1,5 +1,5 @@
 $unit: 'px'
-input[type='checkbox']
+input[type='checkbox'],input[type='radio']
 	display: none
 label
 	&:hover
@@ -830,12 +830,11 @@ main
 		padding: 0 10px
 		transition: .35s ease
 	&-button
-		svg
+		svg,img
 			+wh(16px)
 			margin-right: 7px
 		path
 			stroke: #fff
-
 .table
 	width: 100%
 	overflow-x: auto
@@ -1255,9 +1254,9 @@ main
 	height: calc(100vh - 141px)
 	overflow: auto
 	&-aside
+		margin-bottom: 10px
 		&-list
 			display: none
-		margin-bottom: 10px
 	&-blocks
 		padding: 28px 10px 50px 10px
 		background: #F0F0F3
@@ -1265,6 +1264,11 @@ main
 	&-block
 		padding: 10px
 		background-color: $white
+		&-title
+			margin-top: 30px
+			margin-bottom: 11px
+			&:first-child
+				margin-top: 0
 	&-desc
 		margin-bottom: 10px
 	.minilogo
@@ -1278,7 +1282,6 @@ main
 		&.premium
 			color: rgb(252,230,0)
 	.premium
-		display: none
 		&-offer
 			margin-top: 10px
 			display: block
@@ -1288,11 +1291,17 @@ main
 				color: #9798A3
 			span:last-child
 				color: #FCE600
+		&-button
+			text-transform: uppercase
+	&.trial
+		.premium
+			display: none
 	&.premium
 		.trial
 			display: none
-		.premium
-			display: flex
+		.profile-title
+			strong
+				color: $yellow
 	.row
 		display: flex
 		align-items: center
@@ -1301,12 +1310,12 @@ main
 
 .profile
 	&-title
-		margin-top: 30px
-		margin-bottom: 11px
 		font-family: $g_medium
 		font-size: 18px
-		&:first-child
-			margin-top: 0
+		strong
+			font-family: $g_bold
+			text-transform: uppercase
+
 	&-information
 		&-photo
 			+wh(80px)
@@ -1397,7 +1406,13 @@ main
 		&:last-child
 			&:after
 				content: none
-
+	&-tariff
+		margin-bottom: 20px
+		.profile-title
+			margin: 10px 0
+	&-card
+		&-block
+			margin-top: 15px
 
 .session
 	&-block
@@ -1418,3 +1433,147 @@ main
 		margin-top: 15px
 		font-family: $g_medium
 		text-decoration: underline
+
+.tariff
+	&-link
+		margin: 8px 0 15px
+		font-family: $f_book
+		text-decoration: underline
+		color: rgba($text,.6)
+.card
+	+wh(calc((100% - 10px) / 2),212px)
+	max-width: 145px
+	padding: 20px 17px 0
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	justify-content: space-between
+	position: relative
+	color: $white
+	&-main
+		margin-right: 10px
+	&-logo
+		height: 36px
+		img
+			height: 100%
+			display: block
+	&-text
+		a
+			color: $white
+		span
+			display: flex
+	&-numbers
+		align-items: center
+		img
+			margin-right: 15px
+	&-date
+		align-self: flex-end
+		margin-bottom: 56px
+	&-delete
+		position: absolute
+		top: -5px
+		right: -5px
+	&-logo,&-text,&-date
+		position: relative
+		z-index: 1
+	&-bgc
+		width: 100%
+		height: 184px
+		background-image: url("../img/card.png")
+		background-repeat: no-repeat
+		background-size: 100% 100%
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 0
+	&-name
+		width: calc(100% - 34px)
+		font-family: $f_book
+		text-align: center
+		color: $text
+		position: absolute
+		bottom: 0
+
+.cardAdd
+	+wh(100%)
+	+dfc
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 100
+	opacity: 0
+	visibility: hidden
+	transition: .35s ease
+	&.active
+		visibility: visible
+		opacity: 1
+	&-inner
+		width: calc(100% - 20px)
+		max-width: 514px
+		padding: 30px 20px
+		background-color: $white
+		box-shadow: 0 0 12px 0 rgba(#000,0.18)
+	&-left,&-right
+		position: relative
+	&-input
+		&-inner
+			+wh(100%)
+			+dfc
+			padding: 0 28px
+			flex-direction: column
+			color: $white
+			position: absolute
+			left: 0
+			top: 0
+		&-row
+			margin-top: 10px
+			display: flex
+			align-items: flex-end
+			justify-content: space-between
+			.cardAdd-input-block
+				&:first-child
+					width: 67%
+				&:last-child
+					width: calc(33% - 10px)
+		&-block
+			width: 100%
+			span
+				font-family: $f_book
+				display: block
+				margin-bottom: 5px
+			input
+				+wh(100%,30px)
+				+bdrs(4px)
+				padding: 0 10px
+				border: 1px solid #949494
+				background-color: $white
+	&-right
+		width: 145px
+		margin: 0 auto
+		.cardAdd-input-inner
+			padding: 0 39px
+	&-type
+		margin: 10px 0
+		label
+			margin-left: 14px
+			&:first-child
+				margin-left: 0
+	&-note
+		margin: 10px 0
+		display: block
+	.row
+		display: flex
+		align-items: center
+	.button-orange
+		min-width: 100px
+.payment
+	&-table
+		.col
+			width: 140px
+			flex: 0 0 140px
+			a
+				&:after
+					+af
+					+wh(100%,1px)
+					background-color: $text
+					transition: .35s ease

@@ -623,6 +623,7 @@ main
 	display: flex
 	align-items: flex-start
 	&-aside
+		width: calc(23% - 20px)
 		margin-right: auto
 		margin-bottom: 0
 		display: flex
@@ -632,8 +633,10 @@ main
 			display: flex
 			flex-direction: column
 			align-items: flex-start
+		&-item
+			width: 100%
 		&-button
-			width: 332px
+			width: 100%
 			margin-top: 12px
 			display: block
 			padding: 6px 0 7px 11px
@@ -655,16 +658,28 @@ main
 		display: flex
 		align-items: center
 	.premium
-		display: none
 		&-offer
 			margin-top: auto
 			margin-bottom: 96px
 			text-align: center
 			font-size: 24px
+			span
+				transition: .35s ease
+			&:hover
+				span
+					&:first-child
+						color: $yellow
+					&:last-child
+						color: $text
 	.minilogo
 		text-align: right
+		a
+			display: inline-block
+			transition: .35s ease
+			&:hover
+				transform: scale(1.15)
 	&-blocks
-		width: calc(100% - 370px)
+		width: 77%
 		height: 100%
 		padding: 28px 50px 50px 33px
 		overflow: auto
@@ -676,10 +691,11 @@ main
 			padding: 44px 22px 22px
 		&:last-child
 			margin-bottom: 0
+		&-title
+			margin-top: 0
 
 .profile
 	&-title
-		margin-top: 0
 		font-size: 24px
 	&-information
 		margin-bottom: 18px
@@ -708,6 +724,14 @@ main
 	&-session
 		&:after
 			margin: 27px 0
+	&-tariff
+		margin-bottom: 0
+		margin-right: auto
+	&-card
+		flex: 0 0 314px
+		margin-left: 20px
+		&-block
+			align-items: flex-start!important
 .session
 	&-block
 		margin-left: 80px
@@ -721,3 +745,45 @@ main
 		+dfc
 	&-terminate
 		margin-top: 27px
+		transition: .35s ease
+		&:hover
+			color: $orange
+.card
+	&-text
+		transition: .35s ease
+		&:hover
+			letter-spacing: .5px
+	&-main
+		margin-right: 24px
+	&-delete
+		transition: .35s ease
+		&:hover
+			transform: rotate(180deg)
+
+.cardAdd
+	.desktop-row
+		display: flex
+		align-items: center
+	&-type
+		margin-left: auto
+	&-note
+		margin: 14px 0
+	&-right
+		margin: 0 0 0 auto
+
+.tariff
+	&-link
+		&:hover
+			text-decoration: none
+
+.payment
+	&-table
+		.col
+			width: calc(100% / 6)
+			flex-basis: calc(100% / 6)
+			a
+				&:hover
+					transform: none
+					&:after
+						opacity: 0
+						visibility: hidden
