@@ -177,7 +177,18 @@ class Front {
 			_.detailsBlocksScroll(detailsBlocks,btns,blocks);
 			_.detailsBlocksScrollBtnActive(detailsBlocks,btns,blocks);
 		}
+
+		let switchTopPremium = document.querySelector('.premium-offer');
+		if (switchTopPremium) {
+			let cont = document.querySelector('.details');
+			switchTopPremium.addEventListener('click',function (e){
+				e.preventDefault()
+				cont.classList.remove('trial');
+				cont.classList.add('premium')
+			})
+		}
 	}
+
 	showHideRegUser(form){
 		let cont = form.parentElement;
 		form.classList.toggle('active');

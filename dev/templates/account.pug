@@ -1,7 +1,7 @@
 extends template/main
 append vars
 	-
-		page_title = 'Manage'
+		page_title = 'Account'
 block aside
 	include parts/aside
 block content
@@ -181,11 +181,11 @@ block content
 									strong.premium PREMIUM
 									strong.trial Trial
 							.row
-								a(href='#').tariff-link See the possibilities
+								a(href='/services.html').tariff-link See the possibilities
 							.row.premium
 								span.tariff-payInformation The tariff is paid before: 05/29/2021
 							.row.premium
-								a(href='#').tariff-link Payment history
+								a(href='/payment-history.html').tariff-link Payment history
 							.row.premium
 								button.button-orange
 									span Renew
