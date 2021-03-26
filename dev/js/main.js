@@ -143,11 +143,123 @@ class Front {
 			})
 		}
 
+		let cardAddShowButton = document.querySelectorAll('.card-text a');
+		if (cardAddShowButton.length) {
+			for (let btn of cardAddShowButton) {
+				btn.addEventListener('click',function (e){
+					e.preventDefault();
+					document.querySelector('.cardAdd').classList.add('active')
+				})
+			}
+		}
+
+		let cardAdd = document.querySelector('.cardAdd');
+		if (cardAdd) {
+			cardAdd.addEventListener('click',(e)=>{
+				let
+						target = e.target,
+						targetClass = target.classList;
+				if (targetClass.contains('cardAdd') || targetClass.contains('cancel')) {
+					cardAdd.classList.remove('active')
+				}
+			})
+		}
+
+		let profileForms = document.querySelectorAll('.profile-form');
+		if (profileForms.length) {
+			_.profileFormButtonClick(profileForms)
+		}
+
+		let detailsBlocks = document.querySelector('.details-blocks');
+		if (detailsBlocks) {
+			let btns = document.querySelectorAll('.details-aside-button');
+			let blocks = document.querySelectorAll('.details-block-title');
+			_.detailsBlocksScroll(detailsBlocks,btns,blocks);
+			_.detailsBlocksScrollBtnActive(detailsBlocks,btns,blocks);
+		}
 	}
 	showHideRegUser(form){
 		let cont = form.parentElement;
 		form.classList.toggle('active');
 		cont.classList.toggle('active');
+	}
+	profileFormButtonClick(profileForms){
+		const _ = this;
+		for (let form of profileForms) {
+			let btn = form.querySelector('.profile-edit');
+			if (btn) {
+				btn.addEventListener('click',function (e){
+					let profileInputs = form.querySelectorAll(`.add-input`);
+					for (let input of profileInputs) {
+						input.removeAttribute('disabled');
+					}
+					let btnCont = btn.parentElement;
+					btnCont.classList.remove('active');
+					btnCont.nextElementSibling.classList.add('active')
+				})
+				let cancel = form.querySelector('.cancel');
+				cancel.addEventListener('click',function (e){
+					let profileInputs = form.querySelectorAll(`input[type='text']`);
+					for (let input of profileInputs) {
+						input.setAttribute('disabled',true);
+					}
+					let btnCont = btn.parentElement;
+					btnCont.classList.add('active');
+					btnCont.nextElementSibling.classList.remove('active')
+				})
+			}
+		}
+	}
+
+	detailsBlocksScroll(cont,btns,blocks){
+		for (let i = 0; i < btns.length; i++) {
+			btns[i].addEventListener('click',function (e){
+				e.preventDefault();
+				if (i === btns.length - 2) cont.scrollTo(0,blocks[i].offsetTop - 300)
+				else cont.scrollTo(0,blocks[i].offsetTop - 120)
+			})
+		}
+	}
+	detailsBlocksScrollBtnActive(cont,btns,blocks){
+		let scrollData = [];
+		for (let i = 0; i < btns.length; i++) {
+			scrollData.push({
+				btn: btns[i],
+				top: blocks[i].offsetTop - 120
+			})
+		}
+
+		let index = 0;
+		for (let i = 0; i < scrollData.length; i++){
+			if (cont.scrollTop >= scrollData[i].top) index = i;
+		}
+		scrollData[index].btn.classList.add('active');
+		let scrlTopPrev = cont.scrollTop;
+
+		cont.addEventListener('scroll',function (e){
+			if (window.innerWidth < 1200) return;
+			if (cont.scrollTop < scrlTopPrev){
+				scrlTopPrev = cont.scrollTop;
+				if (index > 0 && cont.scrollTop <= scrollData[index - 1].top){
+					scrollData[index].btn.classList.remove('active')
+					index--;
+					scrollData[index].btn.classList.add('active')
+				}
+			} else {
+				scrlTopPrev = cont.scrollTop;
+				if (cont.scrollTop === cont.scrollHeight - cont.offsetHeight){
+					scrollData[index].btn.classList.remove('active')
+					index = scrollData.length - 1;
+					scrollData[index].btn.classList.add('active')
+				} else {
+					if (cont.scrollTop + cont.offsetHeight / 3 >= scrollData[index + 1].top && index < scrollData.length - 1){
+						scrollData[index].btn.classList.remove('active')
+						index++;
+						scrollData[index].btn.classList.add('active')
+					}
+				}
+			}
+		})
 	}
 	
 	addNewFields(clickData){
@@ -326,7 +438,10 @@ class Front {
 		}
 	}
 
+	addCardHide(){
+		const _ = this;
 
+	}
 
 	init(){
 		const _ = this;

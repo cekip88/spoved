@@ -644,7 +644,7 @@ main
 			border-radius: 4px 0 0 4px
 			box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25)
 			transition: .35s ease
-			&:hover
+			&:hover,&.active
 				border-color: #6D8BF8
 			span
 				display: block
@@ -683,6 +683,7 @@ main
 		height: 100%
 		padding: 28px 50px 50px 33px
 		overflow: auto
+		scroll-behavior: smooth
 	&-block
 		margin-bottom: 44px
 		padding: 22px
@@ -766,6 +767,18 @@ main
 		align-items: center
 	&-type
 		margin-left: auto
+		label
+			transition: .35s ease
+			&:hover
+				transform: translateY(-3px)
+				box-shadow: 0 5px 5px rgba($black,.18)
+			&:active
+				transform: none
+		input:checked+label
+			transform: translateY(-3px)
+			box-shadow: 0 5px 5px rgba($black,.18)
+		img
+			display: block
 	&-note
 		margin: 14px 0
 	&-right

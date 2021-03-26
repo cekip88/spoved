@@ -40,7 +40,7 @@ block content
 					span GO&nbsp;
 					span PREMIUM
 			.details-blocks
-				h2.profile-title.details-block-title
+				h2.profile-title.details-block-title#ProfileInformation
 					span Profile Information
 				.details-block
 					.profile-information
@@ -76,7 +76,7 @@ block content
 								input(type='text' value='Anderson' disabled).add-input
 						.profile-button.row
 							.profile-button-block.active
-								button.button-orange
+								button(type='button').profile-edit.button-orange
 									span Edit
 							.profile-button-block.row
 								button.button-orange
@@ -96,7 +96,7 @@ block content
 								input(type='text' value='+77714445566' disabled).add-input
 						.profile-button.row
 							.profile-button-block.active
-								button.button-orange
+								button(type='button').profile-edit.button-orange
 									span Edit
 							.profile-button-block.row
 								button.button-orange
@@ -111,15 +111,15 @@ block content
 								textarea( value='t.anderson@devcube.com' disabled).add-input
 						.profile-button.row
 							.profile-button-block.active
-								button.button-orange
+								button(type='button').profile-edit.button-orange
 									span Edit
 							.profile-button-block.row
 								button.button-orange
 									span Save
 								button.button-orange.cancel
 									span Cancel
-				h2.profile-title.details-block-title
-					span Account settings
+				h2.profile-title.details-block-title#AccountSettings
+					span Account Settings
 				.details-block
 					form.profile-form
 						.profile-form-block.add-block
@@ -129,7 +129,7 @@ block content
 								input(type='text' value='tomasanderson' disabled).add-input
 						.profile-button.row
 							.profile-button-block.active
-								button.button-orange
+								button(type='button').profile-edit.button-orange
 									span Edit
 							.profile-button-block.row
 								button.button-orange
@@ -222,7 +222,7 @@ block content
 									span Additional
 								button.card-delete
 									+img('close.svg')
-				h2.profile-title.details-block-title
+				h2.profile-title.details-block-title#Password
 					span Password
 				.details-block
 					form.profile-form
@@ -238,15 +238,15 @@ block content
 								input(type='password' disabled).add-input
 						.profile-button.row
 							.profile-button-block.active
-								button.button-orange
+								button(type='button').profile-edit.button-orange
 									span Edit
 							.profile-button-block.row
 								button.button-orange
 									span Save
 								button.button-orange.cancel
 									span Cancel
-				h2.profile-title.details-block-title
-					span Social profiles
+				h2.profile-title.details-block-title#SocialProfiles
+					span Social Profiles
 				.details-block
 					form.profile-form
 						.profile-form-block.add-block
@@ -286,15 +286,15 @@ block content
 								input(type='text' value='link.to/url' disabled).add-input
 						.profile-button.row
 							.profile-button-block.active
-								button.button-orange
+								button(type='button').profile-edit.button-orange
 									span Edit
 							.profile-button-block.row
 								button.button-orange
 									span Save
 								button.button-orange.cancel
 									span Cancel
-				h2.profile-title.details-block-title
-					span Active session
+				h2.profile-title.details-block-title#ActiveSession
+					span Active Session
 				.details-block
 					ul.profile-sessions
 						li.profile-session
@@ -341,8 +341,8 @@ block content
 										span Terminate
 					button.session-terminate
 						span Terminate all other sessions
-				h2.profile-title.details-block-title
-					span Delete account
+				h2.profile-title.details-block-title#DeleteAccount
+					span Delete Account
 				.details-block
 					p.details-desc Want to delete your account? This account is in two groups and has three projects. Deleting an account will delete all of its contents and all associated data.
 					button.button-orange
@@ -392,10 +392,8 @@ block content
 							+img('cardAdd-right.png')
 				span.cardAdd-note *Information about your payment methods is stored securely.
 				.row
-					button.button-orange
-						span Save
-					button.button-orange.cancel
-						span Cancel
+					button.button-orange Save
+					button(type='button').button-orange.cancel Cancel
 		.context <!--active-->
 			.row
 				.context-icon

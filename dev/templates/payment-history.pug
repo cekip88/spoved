@@ -1,0 +1,109 @@
+extends template/main
+append vars
+	-
+		page_title= 'Users'
+block aside
+	include parts/aside
+block content
+	main
+		include parts/search-row
+		.section.contacts
+			.console-title
+				h4.block-title
+					span Payment history
+				button.button-orange.contacts-button#create-user
+					+img('download.svg')
+					span Export Data
+			.table.payment-table
+				.table-head
+					.table-row
+						.col ID Transactions
+						.col Date
+						.col Bankroll
+						.col Card
+						.col Status
+						.col Invoices
+				.table-body
+					-for(let i = 0; i < 30; i++)
+						.table-row
+							.col 233
+							.col 18 march 2021
+							.col 200$
+							.col **** 1289
+							.col Done
+							.col
+								a(href='#')
+									span 233-1289-18032021
+		include parts/pagination
+		.form-cont
+			form.form.registration-user#registration-user
+				.add-block
+					.add-block
+						.add-row
+							h5.add-title User Name
+						.add-input-row
+							input(type='text').add-input
+					.add-block
+						.add-row
+							h5.add-title Team
+						.add-input-row
+							.add-select
+								button(type='button').select-head
+									span Select Team
+									+img('ab.svg')
+								.select-body
+									button(type='button').button.option Spice Girls
+									button(type='button').button.option Back Street Boys
+									button(type='button').button.option Black Star
+									button(type='button').button.option Spice Rangers
+				.add-block
+					.add-block
+						.add-row
+							h5.add-title E-mail
+						.add-input-row
+							input(type='text').add-input
+					.add-block
+						.add-row
+							h5.add-title Mobile
+						.add-input-row
+							input(type='text').add-input
+				.add-block
+					.add-row
+						h5.add-title Password
+							span.add-star *
+					.add-input-row
+						input(type='password').add-input
+				.add-block
+					.add-row
+						h5.add-title Confirm Password
+							span.add-star *
+					.add-input-row
+						input(type='password').add-input
+				.login-btns
+					button.login-submit.button-orange Save
+					button(type='button').login-submit.button-orange.cancel Cancel
+		<!--.logs
+		|      .log
+		|        .log-row
+		|          h6.log-theme Sale
+		|          .log-time 01.26PM
+		|          .log-date 21.12.20
+		|        h5.log-title Notification
+		|        p.log-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		|        button.log-close
+		|      .log.error
+		|        .log-row
+		|          h6.log-theme Sale
+		|          .log-time 01.26PM
+		|          .log-date 21.12.20
+		|        h5.log-title Notification
+		|        p.log-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		|        button.log-close
+		|      .log.successful
+		|        .log-row
+		|          h6.log-theme Sale
+		|          .log-time 01.26PM
+		|          .log-date 21.12.20
+		|        h5.log-title Notification
+		|        p.log-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		|        button.log-close-->
