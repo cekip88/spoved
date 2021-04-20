@@ -1,7 +1,7 @@
 extends template/main
 append vars
 	-
-		page_title= 'Main'
+		page_title= 'Project'
 block aside
 	include parts/aside
 block content
@@ -31,10 +31,26 @@ block content
 					.gr-row
 						span $ git clone http://gogs.apps.mydevcube.com/dmo/tempfordesign.git
 						button.button-orange Copy
+				.project-add-row
+					.project-add-block
+						.project-add-title Database
+						input(type='text').project-add-input
+					.project-add-block
+						.project-add-title User
+						input(type='text').project-add-input
+					.project-add-block
+						.project-add-title Password
+						input(type='text').project-add-input
+					.project-add-block
+						.project-add-title Host
+						input(type='text').project-add-input
+					.project-add-block
+						.project-add-title Part
+						input(type='text').project-add-input
 		.section.framework-section
 			.framework
 				.gr-row
-					h1.framework-title.block-title Enviroment
+					h1.framework-title.block-title Live
 				.gr-row.framework-service
 					.framework-service-cont
 						button.framework-service-card
@@ -102,6 +118,28 @@ block content
 					button.controll-button
 						include ../img/repeat.svg
 						span Restart
+					.project-select-cont
+						+img('coins.svg').project-coins
+						.project-select
+							button.project-select-head
+								span
+								+img('arrow-bottom.svg')
+							input(type='hidden')
+							.project-select-body
+								button(data-value='alpha').project-select-option.active Alpha
+									span
+								button(data-value='beta').project-select-option Beta
+									span
+								button(data-value='gamma').project-select-option Gamma
+									span
+								button(data-value='delta').project-select-option Delta
+									span
+								button(data-value='omega').project-select-option Omega
+									span
+				.project-url.framework-url
+					.gr-row
+						span Project URL: https://dmo.apps.mydevcube.com/tempfordesign/site/https://dmo.apps.mydevcube.com/tempfordesign/site/https://dmo.apps.mydevcube.com/tempfordesign/site/
+						button.button-orange Copy
 		.section.team.block
 			.gr-row.team-first
 				h3.team-title.block-title Team

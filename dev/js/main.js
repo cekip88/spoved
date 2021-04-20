@@ -178,15 +178,22 @@ class Front {
 			_.detailsBlocksScrollBtnActive(detailsBlocks,btns,blocks);
 		}
 
-		let switchTopPremium = document.querySelector('.premium-offer');
-		if (switchTopPremium) {
+		let switchTopPremiumBtn = document.querySelector('.premium-offer');
+		if (switchTopPremiumBtn) {
 			let cont = document.querySelector('.details');
-			switchTopPremium.addEventListener('click',function (e){
+			switchTopPremiumBtn.addEventListener('click',function (e){
 				e.preventDefault()
-				cont.classList.remove('trial');
-				cont.classList.add('premium')
+				_.switchToPremium(switchTopPremiumBtn,cont)
+			})
+			document.querySelector('.premium-button').addEventListener('click',function (e){
+				e.preventDefault()
+				_.switchToPremium(switchTopPremiumBtn,cont)
 			})
 		}
+	}
+	switchToPremium(switchTopPremiumBtn,cont){
+		cont.classList.remove('trial');
+		cont.classList.add('premium')
 	}
 
 	showHideRegUser(form){
@@ -454,12 +461,48 @@ class Front {
 
 	}
 
+	projectSelectPrepare(){
+		const _ = this;
+		let selects = document.querySelectorAll('.project-select');
+		for (let select of selects) {
+			let
+				selectHead = select.querySelector('.project-select-head'),
+				selectOptions = select.querySelectorAll('.project-select-option');
+			selectHead.addEventListener('click',function (){
+				_.projectSelectShow(select);
+			});
+			for (let option of selectOptions) {
+				if (option.classList.contains('active')){
+					selectHead.firstElementChild.textContent = option.textContent;
+					select.querySelector('input').value = option.getAttribute('data-value');
+				}
+				option.addEventListener('click',function (){
+					_.projectSelectClose(select,selectHead,selectOptions,option);
+				})
+			}
+		}
+	}
+	projectSelectShow(select){
+		select.classList.toggle('active');
+	}
+	projectSelectClose(select,head,options,option){
+		const _ = this;
+		for (let opt of options) {
+			opt.classList.remove('active');
+		}
+		option.classList.add('active');
+		head.firstElementChild.textContent = option.textContent;
+		select.querySelector('input').value = option.getAttribute('data-value');
+		_.projectSelectShow(select);
+	}
+
 	init(){
 		const _ = this;
 		_.fqHeightCheck();
 		_.asideLoad();
 		_.setTableWidth();
 		_.handlers();
+		_.projectSelectPrepare();
 	}
 }
 let front = new Front();

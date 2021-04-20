@@ -207,16 +207,35 @@ main
 					transform: scale(1.05)
 		&-cont
 			flex-direction: row
+			flex-wrap: wrap
 	.history-button
 		margin: 0 30px 0 auto
 		&:hover
 			color: $orange
 	::-webkit-scrollbar
 		+wh(3px)
-
-#project:checked~.project-url-cont
-	height: 86px
-	
+	&-add
+		&-row
+			margin-top: 17px
+			display: flex
+			align-items: flex-start
+			justify-content: space-between
+		&-title
+		&-input
+	&-coins
+	&-select
+		&-cont
+			width: 238px
+			margin-left: 40px
+			margin-top: 0
+		&-head
+			padding: 4px 10px
+		&-body
+			z-index: 110
+		&-option
+#project
+	&:checked~.project-url-cont
+		height: 164px
 .framework
 	padding: 30px 0 42px 27px
 	&-title
@@ -287,7 +306,7 @@ main
 			box-shadow: 0 0 8px 2px rgba(#000,.10)
 
 .back
-	padding: 25px 0
+	padding: 25px 0 0
 	&-button
 		margin-left: 40px
 		font-family: $g_medium
