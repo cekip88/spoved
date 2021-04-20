@@ -116,6 +116,14 @@ class Front {
 			})
 		}
 
+		let addServersBtn = document.querySelector('.servers-button');
+		if (addServersBtn) {
+			addServersBtn.addEventListener('click',function () {
+				let form = document.querySelector('.servers-add');
+				_.showServersAddForm(form);
+			})
+		}
+
 		let selHeads = document.querySelectorAll('.select-head');
 		if (selHeads.length){
 			selHeads.forEach(function (btn){
@@ -190,10 +198,35 @@ class Front {
 				_.switchToPremium(switchTopPremiumBtn,cont)
 			})
 		}
+
+		let Selects = document.querySelectorAll('.servers-add-select');
+		if (Selects.length) {
+			for (let select of Selects) {
+				let head = select.querySelector('.servers-add-select-head');
+				head.addEventListener('click',()=>{select.classList.toggle('active')});
+				let options = select.querySelectorAll('.servers-add-select-option');
+				for (let option of options) {
+					option.addEventListener('click',function () {
+						_.serversAddSelectDisactive(select,head,option);
+					})
+				}
+			}
+		}
 	}
 	switchToPremium(switchTopPremiumBtn,cont){
 		cont.classList.remove('trial');
 		cont.classList.add('premium')
+	}
+
+	showServersAddForm(form){
+		form.classList.toggle('active')
+	}
+
+	serversAddSelectDisactive(select,head,option){
+		head.firstElementChild.textContent = option.textContent;
+		let value = option.getAttribute('data-value') ? option.getAttribute('data-value') : option.textContent;
+		select.querySelector('INPUT').value = value;
+		select.classList.remove('active');
 	}
 
 	showHideRegUser(form){

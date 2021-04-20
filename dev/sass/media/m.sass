@@ -831,7 +831,6 @@ main
 		margin-bottom: 12px
 		.block-title
 			margin-right: auto
-			margin-bottom: 5px
 	&-button
 		margin-left: 20px
 	&-area
@@ -1646,37 +1645,253 @@ main
 					+wh(100%,1px)
 					background-color: $text
 					transition: .35s ease
-//.tabs
-//	&-labels
-//		display: flex
-//		flex-wrap: wrap
-//		align-items: flex-start
-//		justify-content: space-between
-//	&-label
-//		flex-basis: calc(33% - 10px)
-//		margin-right: 10px
-//		margin-bottom: 10px
-//		&:after
-//			+af
-//			+wh(100%,2px)
-//			transition: .35s ease
-//	&-body
-//		display: flex
-//		align-items: flex-start
-//	&-cont
-//
-//
-//#tab-1:checked ~ .tabs-labels .tabs-label:first-child,
-//#tab-2:checked ~ .tabs-labels .tabs-label:nth-child(2),
-//#tab-3:checked ~ .tabs-labels .tabs-label:nth-child(3),
-//#tab-4:checked ~ .tabs-labels .tabs-label:nth-child(4),
-//#tab-5:checked ~ .tabs-labels .tabs-label:nth-child(5),
-//#tab-6:checked ~ .tabs-labels .tabs-label:nth-child(6)
-//	&:after
-//		background-color: $blue
+.tabs
+	&-labels
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+		justify-content: space-between
+	&-label
+		margin-bottom: 10px
+		display: flex
+		align-items: center
+		text-transform: uppercase
+		font-family: $f_demi
+		position: relative
+		svg
+			margin-right: 5px
+		&:after
+			+af
+			+wh(100%,2px)
+			position: absolute
+			bottom: -3px
+			transition: .35s ease
+	&-body
+		display: flex
+		align-items: flex-start
+		overflow: hidden
+	&-cont
+		width: 100%
+		flex: 0 0 100%
+		overflow: auto
+		transition: .35s ease
+		&-1
+			padding: 10px
+			border-radius: 4px
+			border: 1px solid rgba(0, 0, 0, 0.12)
 
+#tab-1:checked ~ .tabs-labels .tabs-label:first-child,
+#tab-2:checked ~ .tabs-labels .tabs-label:nth-child(2),
+#tab-3:checked ~ .tabs-labels .tabs-label:nth-child(3),
+#tab-4:checked ~ .tabs-labels .tabs-label:nth-child(4),
+#tab-5:checked ~ .tabs-labels .tabs-label:nth-child(5),
+#tab-6:checked ~ .tabs-labels .tabs-label:nth-child(6)
+	&:after
+		background-color: $blue
+#tab-2:checked ~ .tabs-body .tabs-cont
+	transform: translateX(-100%)
+#tab-3:checked ~ .tabs-body .tabs-cont
+	transform: translateX(-200%)
+#tab-4:checked ~ .tabs-body .tabs-cont
+	transform: translateX(-300%)
+#tab-5:checked ~ .tabs-body .tabs-cont
+	transform: translateX(-400%)
+#tab-6:checked ~ .tabs-body .tabs-cont
+	transform: translateX(-500%)
 
+.servers
+	height: calc(100vh - 120px)
+	padding: 10px
+	background-color: #F0F0F3
+	overflow: auto
+	&-title
+		width: 100%
+		font-family: $g_medium
+		font-size: 18px
+	&-button
+		svg,img
+			+wh(16px)
+			margin-right: 7px
+		path
+			stroke: #fff
+	&-add
+		max-height: 0
+		padding: 0 20px
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		flex-wrap: wrap
+		border-radius: 4px
+		background-color: #fff
+		overflow: hidden
+		transition: .35s
+		&.active
+			max-height: 200vh
+			padding: 20px
+			margin-bottom: 20px
+		&-block
+			margin-top: 16px
+			width: 100%
+		&-title
+			margin-bottom: 5px
+			display: flex
+			justify-content: space-between
+			align-items: center
+			font-family: $f_book
+			span
+				color: $red
+		&-input
+			width: 100%
+			padding: 18px 10px
+			border: 1px solid #949494
+			border-radius: 4px
+		&-select
+			width: 100%
+			position: relative
+			&-head
+				width: 100%
+				height: 54px
+				padding: 18px 10px
+				display: flex
+				align-items: center
+				justify-content: space-between
+				border-radius: 4px
+				border: 1px solid #949494
+				font-family: $f_book
+			&-body
+				width: calc(100% + 2px)
+				max-height: 0
+				border-radius: 4px
+				padding: 0 20px 0 10px
+				display: flex
+				flex-direction: column
+				background-color: #F0F0F3
+				overflow: auto
+				transition: .35s ease
+				position: absolute
+				top: 54px
+				left: -1px
+				right: 0
+				z-index: 100
+			&.active
+				.servers-add-select-body
+					max-height: 310px
+					padding-bottom: 10px
+			&-option
+				height: 31px
+				flex: 0 0 31px
+				margin-top: 5px
+				padding: 0 10px
+				display: flex
+				align-items: center
+				border-radius: 4px
+				background-color: #fff
+				text-align: left
+				transition: .35s ease
+		&-button
+			margin-top: 16px
+			min-width: 110px!important
+	&-table
+		width: 100%
+		border-collapse: collapse
+		&-title
+			margin-bottom: 10px
+			font-size: 18px
+			font-family: $g_medium
+		thead
+			background-color: rgba(#003FFF,.4)
+			font-family: $f_demi
+		tbody
+			height: calc(100vh - 281px)
+			overflow-y: auto
+			overflow-x: hidden
+			transition: .35s ease
+			font-family: $f_book
+			button,a
+				margin-right: 7px
+				transition: .35s ease
+				&:last-child
+					margin-right: 0
+				&:hover
+					transform: scale(1.05)
+		tr
+			&:nth-child(2n)
+				div
+					background-color: rgba(#003FFF,.2)
+		&-inner
+			+dfc
+			flex: 0 0 150px
+			padding: 10px
+			line-height: 1.2
+			&-action
+				flex: 0 0 100px
+			&-id
+				flex: 0 0 50px
 
-
-
+.server
+	&-title
+		position: relative
+		padding-left: 10px
+		&::before
+			+af
+			+wh(2px,100%)
+			background-color: $blue
+			position: absolute
+			left: 0
+			top: 0
+		span
+			display: block
+			&:first-child
+				font-size: 18px
+				font-family: $g_medium
+			&:last-child
+				font-family: $g_reg
+				color: rgba(#000,.5)
+				text-decoration: underline
+	&-row
+		margin-top: 10px
+		padding: 10px
+		border-radius: 4px
+		border: 1px solid rgba(0, 0, 0, 0.12)
+		background-color: #F5F5F5
+		&-title
+			span
+				display: block
+				font-family: $g_reg
+				color: rgba(#000,.5)
+				&:first-child
+					font-size: 18px
+					font-family: $g_medium
+					text-transform: uppercase
+	&-block
+		margin-top: 10px
+		display: flex
+		align-items: flex-start
+		overflow: auto
+		&-unit
+			flex: 0 0 250px
+			padding: 10px
+			margin-right: 20px
+			display: flex
+			align-items: center
+			justify-content: space-between
+			border-radius: 3px
+			background-color: #fff
+		&-button
+			padding: 5px 10px
+			display: flex
+			flex-direction: column
+			align-items: center
+			&:hover
+				span,&:before,&:after
+					background-color: $orange
+			span,&:before,&:after
+				+wh(3px)
+				background-color: rgba(0, 0, 0, 0.5)
+				border-radius: 100%
+				transition: .35s ease
+			span
+				margin: 3px 0
+			&:before,&:after
+				+af
 

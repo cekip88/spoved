@@ -7,11 +7,11 @@ block aside
 block content
 	main
 		include parts/search-row
-		.section.contacts
+		.section.servers
 			.console-title
 				h4.block-title
 					span Servers
-				button.button-orange.contacts-button#create-user
+				button.button-orange.servers-button
 					svg(width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg")
 						path(d="M6 10.5C8.48528 10.5 10.5 8.48528 10.5 6C10.5 3.51472 8.48528 1.5 6 1.5C3.51472 1.5 1.5 3.51472 1.5 6C1.5 8.48528 3.51472 10.5 6 10.5Z" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
 						path(d="M4.125 6H7.875" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round")
@@ -25,18 +25,223 @@ block content
 				input(type='radio' name='tabs')#tab-5
 				input(type='radio' name='tabs')#tab-6
 				.tabs-labels
-					label(for='tab-1').tabs-label TABLE
-					label(for='tab-2').tabs-label ALPHA
-					label(for='tab-3').tabs-label BETA
-					label(for='tab-4').tabs-label GAMMA
-					label(for='tab-5').tabs-label DELTA
-					label(for='tab-6').tabs-label OMEGA
+					label(for='tab-1').tabs-label
+						span general information
+					label(for='tab-2').tabs-label
+						include ../img/coins.svg
+						span ALPHA
+					label(for='tab-3').tabs-label
+						include ../img/coins.svg
+						span BETA
+					label(for='tab-4').tabs-label
+						include ../img/coins.svg
+						span GAMMA
+					label(for='tab-5').tabs-label
+						include ../img/coins.svg
+						span DELTA
+					label(for='tab-6').tabs-label
+						include ../img/coins.svg
+						span OMEGA
 				form.servers-add
 					h3.servers-title Adding Server
-
+					.servers-add-block
+						.servers-add-title
+							h6 Server Name
+							span *
+						input(type='text').servers-add-input
+					.servers-add-block
+						.servers-add-title
+							h6 Source Type
+						.servers-add-select
+							button(type='button').servers-add-select-head
+								span
+								+img('arrow-bottom-select.svg')
+							input(type='hidden')
+							.servers-add-select-body
+								button(type='button' data-value='value-1').servers-add-select-option Text 1
+								button(type='button' data-value='value-2').servers-add-select-option Text 2
+								button(type='button').servers-add-select-option Text 3
+								button(type='button').servers-add-select-option Text 4
+					.servers-add-block
+						.servers-add-title
+							h6 Server Type
+						.servers-add-select
+							button(type='button').servers-add-select-head
+								span
+								+img('arrow-bottom-select.svg')
+							input(type='hidden')
+							.servers-add-select-body
+								button(type='button' data-value='value-1').servers-add-select-option Text 1
+								button(type='button' data-value='value-2').servers-add-select-option Text 2
+								button(type='button').servers-add-select-option Text 3
+								button(type='button').servers-add-select-option Text 4
+					.servers-add-block
+						.servers-add-title
+							h6 AWS Region
+						.servers-add-select
+							button(type='button').servers-add-select-head
+								span
+								+img('arrow-bottom-select.svg')
+							input(type='hidden')
+							.servers-add-select-body
+								button(type='button' data-value='value-1').servers-add-select-option Text 1
+								button(type='button' data-value='value-2').servers-add-select-option Text 2
+								button(type='button').servers-add-select-option Text 3
+								button(type='button').servers-add-select-option Text 4
+					.servers-add-block
+						.servers-add-title
+							h6 AWS key
+							span *
+						input(type='text').servers-add-input
+					.servers-add-block
+						.servers-add-title
+							h6 AWS Secret
+						input(type='text').servers-add-input
+					button.button-orange.servers-add-button
+						span Add
 				.tabs-body
 					.tabs-cont.tabs-cont-1
+						.servers-table-cont
+							h3.servers-table-title Available servers
+							table.servers-table
+								thead
+									tr
+										th
+											.servers-table-inner.servers-table-inner-id #
+										th
+											.servers-table-inner Source Type
+										th
+											.servers-table-inner Server Type
+										th
+											.servers-table-inner Server Name
+										th
+											.col.col-action Actions
+								tbody
+									tr
+										td
+											.servers-table-inner.servers-table-inner-id -
+										td
+											.servers-table-inner -
+										td
+											.servers-table-inner -
+										td
+											.servers-table-inner Alpha
+										td
+											.servers-table-inner.servers-table-inner-action
+												button
+													+img('pen.svg')
+												button
+													+img('circle-x-fill-24.svg')
+									tr
+										td
+											.servers-table-inner.servers-table-inner-id -
+										td
+											.servers-table-inner -
+										td
+											.servers-table-inner -
+										td
+											.servers-table-inner Beta
+										td
+											.servers-table-inner.servers-table-inner-action
+												button
+													+img('pen.svg')
+												button
+													+img('circle-x-fill-24.svg')
+									tr
+										td
+											.servers-table-inner.servers-table-inner-id -
+										td
+											.servers-table-inner -
+										td
+											.servers-table-inner -
+										td
+											.servers-table-inner Gamma
+										td
+											.servers-table-inner.servers-table-inner-action
+												button
+													+img('pen.svg')
+												button
+													+img('circle-x-fill-24.svg')
+									tr
+										td
+											.servers-table-inner.servers-table-inner-id -
+										td
+											.servers-table-inner -
+										td
+											.servers-table-inner -
+										td
+											.servers-table-inner Delta
+										td
+											.servers-table-inner.servers-table-inner-action
+												button
+													+img('pen.svg')
+												button
+													+img('circle-x-fill-24.svg')
+									tr
+										td
+											.servers-table-inner.servers-table-inner-id -
+										td
+											.servers-table-inner -
+										td
+											.servers-table-inner -
+										td
+											.servers-table-inner Omega
+										td
+											.servers-table-inner.servers-table-inner-action
+												button
+													+img('pen.svg')
+												button
+													+img('circle-x-fill-24.svg')
 					.tabs-cont.tabs-cont-2
+						.server
+							h3.server-title
+								span ALPHA
+								span Type
+							.server-row
+								h6.server-row-title
+									span ENVIROMENT
+								.server-block
+									.server-block-unit
+										h6.server-row-title
+											span LIVE
+											span short description
+										button(type='button').server-block-button
+											span
+									.server-block-unit
+										h6.server-row-title
+											span Stagging
+											span short description
+										button(type='button').server-block-button
+											span
+									.server-block-unit
+										h6.server-row-title
+											span Development
+											span short description
+										button(type='button').server-block-button
+											span
+							.server-row
+								h6.server-row-title
+									span Projects
+								.server-block
+									.server-block-unit
+										h6.server-row-title
+											span Project
+											span short description
+										button(type='button').server-block-button
+											span
+									.server-block-unit
+										h6.server-row-title
+											span Project
+											span short description
+										button(type='button').server-block-button
+											span
+									.server-block-unit
+										h6.server-row-title
+											span Project
+											span short description
+										button(type='button').server-block-button
+											span
+
 					.tabs-cont.tabs-cont-3
 					.tabs-cont.tabs-cont-4
 					.tabs-cont.tabs-cont-5
