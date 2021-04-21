@@ -24,7 +24,6 @@ block content
 							.projects-item-title
 								span Project name
 								a(href='project.html') Tempfordesign
-							a(href='console.html').history-button History
 							.projects-item-info.gr-row
 								include ../img/Users.svg
 								div
@@ -71,6 +70,13 @@ block content
 										div
 											span Visibility
 											span Private
+									button(type='button').projects-settings
+										include ../img/GearSix.svg
+									.projects-card-info.gr-row
+										include ../img/coins.svg
+										div
+											span Alpha
+											span Type
 							li.projects-card
 								input(type='checkbox' id='#proj-'+i+'staging').projects-card-checkbox
 								.projects-buttons
@@ -102,6 +108,13 @@ block content
 										div
 											span Visibility
 											span Public
+									button(type='button').projects-settings
+										include ../img/GearSix.svg
+									.projects-card-info.gr-row
+										include ../img/coins.svg
+										div
+											span Alpha
+											span Type
 							li.projects-card
 								input(type='checkbox' id='#proj-'+i+'dev').projects-card-checkbox
 								.projects-buttons
@@ -133,3 +146,10 @@ block content
 										div
 											span Visibility
 											span Private
+									button(type='button').projects-settings
+										include ../img/GearSix.svg
+									.projects-card-info.gr-row
+										include ../img/coins.svg
+										div
+											span Alpha
+											span Type
